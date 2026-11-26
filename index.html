@@ -6,6 +6,9 @@
 <title>ExtMusic · Reproductor de música libre para Android</title>
 <meta name="description" content="ExtMusic es un reproductor de música libre para Android: escucha YouTube Music sin cuenta ni anuncios, descarga canciones y reproduce la música de tu teléfono. GPL-3.0.">
 <link rel="canonical" href="https://comunicaa2.github.io/ExtMusic-web/">
+<link rel="alternate" hreflang="es" href="https://comunicaa2.github.io/ExtMusic-web/">
+<link rel="alternate" hreflang="en" href="https://comunicaa2.github.io/ExtMusic-web/en/">
+<link rel="alternate" hreflang="x-default" href="https://comunicaa2.github.io/ExtMusic-web/">
 <meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#190e0b" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
@@ -16,6 +19,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:site_name" content="ExtMusic">
 <meta property="og:title" content="ExtMusic · Reproductor de música libre para Android">
 <meta property="og:description" content="Escucha YouTube Music sin cuenta ni anuncios y la música de tu teléfono. Software libre (GPL-3.0).">
@@ -60,7 +64,7 @@
     <div class="idioma" role="group" aria-label="Idioma">
       <a href="index.html" aria-current="true" lang="es">ES</a>
       <span aria-hidden="true">/</span>
-      <span lang="en" aria-disabled="true" title="English version coming soon">EN<span class="visualmente-oculto"> (próximamente)</span></span>
+      <a href="en/index.html" lang="en" hreflang="en">EN<span class="visualmente-oculto"> (English)</span></a>
     </div>
   </div>
   <nav class="marco indice" aria-label="Principal">
@@ -215,10 +219,11 @@
     <div class="dos-col" style="margin-top:var(--e-6)">
       <div class="tabla">
         <table class="datos">
-          <caption>Tabla 3. Conexiones de red</caption>
+          <caption>Tabla 3. Conexiones de red principales</caption>
           <thead><tr><th scope="col">Servicio</th><th scope="col">Para qué</th></tr></thead>
           <tbody>
-            <tr><th scope="row"><code>music.youtube.com</code></th><td>Catálogo, búsqueda y audio</td></tr>
+            <tr><th scope="row"><code>music.youtube.com</code></th><td>Catálogo y búsqueda</td></tr>
+            <tr><th scope="row"><code>*.googlevideo.com</code></th><td>Audio de las canciones</td></tr>
             <tr><th scope="row"><code>lrclib.net</code></th><td>Letras</td></tr>
             <tr><th scope="row"><code>lyrics.kugou.com</code></th><td>Letras de respaldo</td></tr>
             <tr><th scope="row"><code>api.github.com</code></th><td>Buscar actualizaciones (solo la versión de GitHub)</td></tr>

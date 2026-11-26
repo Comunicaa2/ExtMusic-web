@@ -12,6 +12,7 @@ index.html                  Página principal (español)
 versiones.html              Versión actual, instalación, comprobación y historial
 privacidad.html             Privacidad y seguridad (hechos comprobados en el código)
 documentacion.html          Documentación de uso, solución de problemas y FAQ (textos literales de la app)
+en/                         Versión en inglés: index.html, versions.html, privacy.html, docs.html
 .nojekyll                   GitHub Pages sirve los archivos tal cual, sin Jekyll
 assets/css/extmusic.css     Sistema de diseño «Datasheet»: tokens + componentes, claro y oscuro automático
 assets/fonts/               Hanken Grotesk y JetBrains Mono (SIL OFL 1.1, subconjunto latino) + licencias
@@ -23,6 +24,8 @@ assets/img/capturas/        Capturas reales de la app en WebP (360, 540 y 720 px
 
 - **Rutas siempre relativas** (`assets/...`). El sitio se publica en `https://comunicaa2.github.io/ExtMusic-web/`, no en la raíz de un dominio.
 - **Sin recursos externos.** Las fuentes y las imágenes se sirven desde el propio sitio, y no hay analíticas ni scripts de terceros.
+- **Dos idiomas sincronizados.** Cada página en español tiene su equivalente en `en/` (index↔index, versiones↔versions, privacidad↔privacy, documentacion↔docs), enlazadas con el selector ES/EN y con `hreflang`. Cualquier dato que cambie (versión, tamaño, huella, permisos…) se cambia en los dos idiomas. Formato: «4,8 MB» y «25-11-2026» en español; «4.8 MB» y «2026-11-25» en inglés.
+- **La app solo está en español.** En inglés, cada opción se cita con su nombre en español y la traducción entre paréntesis; las notas de versión en inglés son las oficiales de `fastlane/metadata/android/en-US/changelogs/` del repositorio de la app.
 - **JavaScript mínimo y opcional.** Solo hay un script en línea (una línea) que cierra el menú móvil al elegir una sección; sin JavaScript todo funciona igual.
 - **Cabecera, menú, script y pie son iguales en todas las páginas** (copiados a mano, sin paso de construcción). Si cambias uno, cambia todos; en cada página solo varía qué enlace lleva `aria-current="page"`.
 - **Capturas reales y sin editar.** Se generan desde los PNG originales con ImageMagick:

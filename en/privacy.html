@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy and security · ExtMusic</title>
+<meta name="description" content="What data ExtMusic stores and where, which services it connects to, which permissions it requests and how it verifies its updates. Facts checked in the code of version 1.4.2.">
+<link rel="canonical" href="https://comunicaa2.github.io/ExtMusic-web/en/privacy.html">
+<link rel="alternate" hreflang="es" href="https://comunicaa2.github.io/ExtMusic-web/privacidad.html">
+<link rel="alternate" hreflang="en" href="https://comunicaa2.github.io/ExtMusic-web/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://comunicaa2.github.io/ExtMusic-web/privacidad.html">
+<meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#190e0b" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/img/icono.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/img/icono-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:site_name" content="ExtMusic">
+<meta property="og:title" content="Privacy and security · ExtMusic">
+<meta property="og:description" content="No account, no ads and no analytics. What ExtMusic stores, who it connects to and which permissions it requests.">
+<meta property="og:url" content="https://comunicaa2.github.io/ExtMusic-web/en/privacy.html">
+<meta property="og:image" content="https://comunicaa2.github.io/ExtMusic-web/assets/img/icono-512.png">
+<meta property="og:image:alt" content="ExtMusic icon: an amber wave on a dark brown background">
+<meta name="twitter:card" content="summary">
+<link rel="preload" href="../assets/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/extmusic.css">
+</head>
+<body>
+<a class="salto" href="#content">Skip to content</a>
+<div class="hoja">
+
+<header>
+  <div class="marco doc">
+    <a class="marca" href="index.html" aria-label="ExtMusic, home"><img src="../assets/img/icono.svg" alt="" width="28" height="28">ExtMusic</a>
+    <span class="doc__tipo">Music player for Android</span>
+    <span class="doc__rev">v1.4.2 · 2026-11-25</span>
+    <div class="idioma" role="group" aria-label="Language">
+      <a href="../privacidad.html" lang="es" hreflang="es">ES<span class="visualmente-oculto"> (Español)</span></a>
+      <span aria-hidden="true">/</span>
+      <a href="privacy.html" aria-current="true" lang="en">EN</a>
+    </div>
+  </div>
+  <nav class="marco indice" aria-label="Main">
+    <ol>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="versions.html">Versions</a></li>
+      <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+      <li><a href="docs.html">Docs</a></li>
+      <li class="indice__descarga"><a href="#download">↓ Download v1.4.2</a></li>
+    </ol>
+  </nav>
+  <details class="marco menu">
+    <summary>Contents</summary>
+    <nav aria-label="Main (mobile)">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="versions.html">Versions</a></li>
+        <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="#download">Download v1.4.2</a></li>
+      </ol>
+    </nav>
+  </details>
+</header>
+
+<main id="content">
+  <section class="marco seccion" aria-labelledby="t-page">
+    <h1 class="titular" id="t-page">Privacy and security</h1>
+    <p class="subtitulo">What ExtMusic stores, who it connects to and how it protects itself. <span class="marcador">Only facts checked</span> in the code.</p>
+    <div class="aviso"><p><strong>Scope:</strong> this page summarizes a review of the code of version 1.4.2, done for this website on 2026-11-25. It is not an independent security audit.</p></div>
+  </section>
+
+  <section class="marco seccion" id="summary" aria-labelledby="t-summary">
+    <h2 class="titulo-sec" id="t-summary"><span class="titulo-sec__num">1</span>Summary</h2>
+    <div class="tabla">
+      <table class="datos">
+        <caption>Table 1. In a few words</caption>
+        <thead><tr><th scope="col">Question</th><th scope="col">Answer</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Does it need an account?</th><td>No. The app has no accounts and doesn't ask for personal data.</td></tr>
+          <tr><th scope="row">Does it show ads?</th><td>No.</td></tr>
+          <tr><th scope="row">Does it send analytics?</th><td>It includes no analytics or crash-reporting libraries.</td></tr>
+          <tr><th scope="row">Where is my library?</th><td>On your phone. ExtMusic has no servers of its own.</td></tr>
+          <tr><th scope="row">Who sees what I listen to?</th><td>The services it connects to in order to work (YouTube, LRCLIB, KuGou and, for updates, GitHub) receive the normal network requests: for example, your IP address and what you search for or play. Each one follows its own privacy policy.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="marco seccion" id="data" aria-labelledby="t-data">
+    <h2 class="titulo-sec" id="t-data"><span class="titulo-sec__num">2</span>What is stored and where</h2>
+    <div class="tabla">
+      <table class="datos datos--apilable">
+        <caption>Table 2. Data the app stores</caption>
+        <thead><tr><th scope="col">Data</th><th scope="col">Where</th><th scope="col">How it is deleted</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Likes, playlists, history and recommendations</th><td>In the app's internal database, kept separately per <strong>taste profile</strong>.</td><td class="nota">Deleting a profile deletes its history, Likes and playlists («Las descargas no se tocan», downloads are not touched). Internal data is deleted when you uninstall the app.</td></tr>
+          <tr><th scope="row">Temporary audio and cover art</th><td>Internal cache, with a maximum you choose in the settings. If your phone is low on space, it drops to 32 MB.</td><td class="nota">Ajustes → «Liberar espacio» (Free up space); downloads, Likes and playlists are not touched.</td></tr>
+          <tr><th scope="row">Downloaded songs</th><td>In the app's own storage.</td><td class="nota">With «Eliminar descarga» (Delete download) in the app, or by deleting the files.</td></tr>
+          <tr><th scope="row">Backup</th><td>An <code>.extmusic</code> file with likes, playlists, history, queue and settings, <strong>only when you export it</strong>, wherever you save it.</td><td class="nota">By deleting the file. How to make one: <a href="docs.html#backups">Docs → Backups</a>.</td></tr>
+          <tr><th scope="row">Android automatic backup</th><td><strong>Disabled</strong> (<code>allowBackup="false"</code>): ExtMusic's data is not uploaded to Google's backup.</td><td class="nota nota--vacia">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="marco seccion" id="connections" aria-labelledby="t-connections">
+    <h2 class="titulo-sec" id="t-connections"><span class="titulo-sec__num">3</span>Network connections</h2>
+    <div class="tabla">
+      <table class="datos datos--apilable">
+        <caption>Table 3. Services ExtMusic connects to</caption>
+        <thead><tr><th scope="col">Service</th><th scope="col">What for</th><th scope="col">What it receives, besides the request</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><code>music.youtube.com</code><br><code>www.youtube.com</code></th><td>Catalog, search, recommendations and data for playback.</td><td class="nota">What you search for and what you ask to play.</td></tr>
+          <tr><th scope="row"><code>*.googlevideo.com</code></th><td>The songs' audio (YouTube's content servers).</td><td class="nota">Which song is playing.</td></tr>
+          <tr><th scope="row"><code>ytimg.com</code> · <code>ggpht.com</code><br><code>googleusercontent.com</code></th><td>Cover art and artist photos.</td><td class="nota">Which image is requested.</td></tr>
+          <tr><th scope="row"><code>lrclib.net</code></th><td>Synced lyrics.</td><td class="nota">Song title, artist and duration.</td></tr>
+          <tr><th scope="row"><code>lyrics.kugou.com</code></th><td>Fallback lyrics, if LRCLIB has none.</td><td class="nota">Song title, artist and duration.</td></tr>
+          <tr><th scope="row"><code>api.github.com</code><br><code>github.com</code></th><td>Check for and download updates. <strong>Only in the version downloaded from GitHub.</strong></td><td class="nota">That the latest published version is being checked.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:var(--e-4)">All traffic is encrypted (HTTPS).</p>
+  </section>
+
+  <section class="marco seccion" id="permissions" aria-labelledby="t-permissions">
+    <h2 class="titulo-sec" id="t-permissions"><span class="titulo-sec__num">4</span>Permissions</h2>
+    <div class="tabla">
+      <table class="datos">
+        <caption>Table 4. Permissions declared by the app (version 1.4.2)</caption>
+        <thead><tr><th scope="col">Permission</th><th scope="col">What for</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><code>INTERNET</code></th><td>Listen, search, fetch lyrics and check for updates.</td></tr>
+          <tr><th scope="row"><code>ACCESS_NETWORK_STATE</code></th><td>Know whether there is a connection and whether it is Wi-Fi (for downloading only on Wi-Fi).</td></tr>
+          <tr><th scope="row"><code>READ_MEDIA_AUDIO</code><br><code>READ_EXTERNAL_STORAGE</code> <span class="nota">(up to Android 12)</span></th><td>Read the music stored on your phone. Requested when you open the Local tab.</td></tr>
+          <tr><th scope="row"><code>WRITE_EXTERNAL_STORAGE</code> <span class="nota">(up to Android 10)</span></th><td>Save downloads on older Android versions.</td></tr>
+          <tr><th scope="row"><code>FOREGROUND_SERVICE</code><br><code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code></th><td>Keep playing in the background, with the playback notification.</td></tr>
+          <tr><th scope="row"><code>WAKE_LOCK</code></th><td>Keep the music from stopping when the screen is off.</td></tr>
+          <tr><th scope="row"><code>POST_NOTIFICATIONS</code></th><td>Playback controls and download and update notices. Requested the first time.</td></tr>
+          <tr><th scope="row"><code>MODIFY_AUDIO_SETTINGS</code></th><td>Audio effects such as volume normalization.</td></tr>
+          <tr><th scope="row"><code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code></th><td>Ask you to let Android keep the music playing in the background. You decide.</td></tr>
+          <tr><th scope="row"><code>REQUEST_INSTALL_PACKAGES</code></th><td>Install its own verified updates. Only in the GitHub version, and Android asks you to confirm.</td></tr>
+          <tr><th scope="row"><code>RECEIVE_BOOT_COMPLETED</code> <span class="nota">(added by WorkManager)</span></th><td>Resume pending downloads after the phone restarts.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="marco seccion" id="security" aria-labelledby="t-security">
+    <h2 class="titulo-sec" id="t-security"><span class="titulo-sec__num">5</span>Technical security</h2>
+    <ul>
+      <li><strong>HTTPS only.</strong> Unencrypted traffic is blocked (<code>cleartextTrafficPermitted="false"</code>).</li>
+      <li><strong>System certificates only.</strong> The published version does not trust user-installed certificates, which makes intercepting its traffic harder. Development builds do accept them, for debugging.</li>
+      <li><strong>Patched dependencies.</strong> The app forces patched versions of two indirect libraries (jsoup and Guava) because of published security advisories.</li>
+      <li><strong>Open source.</strong> All the code is on <a href="https://github.com/Comunicaa2/ExtMusic">GitHub</a> under GPL-3.0-or-later; anyone can review it.</li>
+    </ul>
+  </section>
+
+  <section class="marco seccion" id="updates" aria-labelledby="t-updates">
+    <h2 class="titulo-sec" id="t-updates"><span class="titulo-sec__num">6</span>Verified updates</h2>
+    <p>The root of trust is the <strong>key used to sign the published APKs</strong>: the same one Android uses to accept or reject an update. The updater only appears in copies signed with that key (the GitHub ones).</p>
+    <div class="tabla">
+      <table class="datos">
+        <caption>Table 5. What is checked before installing</caption>
+        <thead><tr><th scope="col">Check</th><th scope="col">If it fails</th></tr></thead>
+        <tbody>
+          <tr><td>The release has a single APK, from <code>github.com/Comunicaa2/ExtMusic</code>, between 1 B and 50 MB and with a published SHA-256 fingerprint.</td><td class="nota">Nothing is offered.</td></tr>
+          <tr><td>The published version is newer than the installed one.</td><td class="nota">Nothing is offered.</td></tr>
+          <tr><td>The download doesn't exceed the published size and its SHA-256 matches.</td><td class="nota">It is deleted: «La descarga no coincidía…» (the download didn't match).</td></tr>
+          <tr><td>Before offering to install it: same package, higher version number and the same signature as the installed app.</td><td class="nota">It is deleted: «La APK no era válida…» (the APK wasn't valid).</td></tr>
+          <tr><td>When you tap Install everything is checked again; then Android verifies signature and version once more.</td><td class="nota">The installer doesn't open.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dos-col" style="margin-top:var(--e-6)">
+      <div>
+        <h3>Covered threats</h3>
+        <ul>
+          <li>An APK altered on its way to you.</li>
+          <li>A fake release on a compromised GitHub account: without the signing key, no APK can pass.</li>
+          <li>Cut-off or interrupted downloads.</li>
+          <li>Going back to an older version.</li>
+          <li>Copies with a different signature.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Not covered</h3>
+        <ul>
+          <li>Whoever controls the GitHub account could <strong>hide</strong> a new version.</li>
+          <li>Or put <strong>fake text</strong> in the release notes. That's why they are shown as plain text, without links.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:var(--e-4)">SHA-256 fingerprint of the signing certificate: <span class="hash">7492411a3df91a2128010740826791eed78f15deba2a962bea2ca6e9e2a3e2a7</span>. How to check it: <a href="versions.html#verify">Versions → Check the file</a>.</p>
+  </section>
+
+  <section class="marco seccion" id="website" aria-labelledby="t-website">
+    <h2 class="titulo-sec" id="t-website"><span class="titulo-sec__num">7</span>This website</h2>
+    <p>This website uses no cookies, no analytics and no resources from other domains: fonts and images are served from the site itself. It is hosted on GitHub Pages, so GitHub, like any server, receives the requests of whoever visits it, under its own privacy policy.</p>
+  </section>
+
+  <section class="bloque-descarga" id="download" aria-labelledby="t-download">
+    <div class="marco bloque-descarga__rejilla">
+      <div>
+        <h2 id="t-download">Get it from the official source.</h2>
+        <p>ExtMusic is published only on <a href="https://github.com/Comunicaa2/ExtMusic/releases">GitHub Releases</a>. The GitHub version tells you about new versions and checks the fingerprint and the signature before installing them.</p>
+        <a class="boton" href="https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic-1.4.2.apk">Download ExtMusic 1.4.2 <span class="boton__detalle">4.8 MB</span></a>
+      </div>
+      <div>
+        <p class="etiqueta" style="margin:0">Check the file</p>
+        <pre class="codigo">sha256sum ExtMusic-1.4.2.apk
+5c964566b91704ef26e2dc6f13758f6bcfd305b616ddf89def17c4b8e78a213c</pre>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="marco pie">
+  <p class="etiqueta">Notes</p>
+  <p>ExtMusic is free software under GPL-3.0-or-later. <a href="https://github.com/Comunicaa2/ExtMusic">Source code on GitHub</a>.</p>
+  <p>ExtMusic is not affiliated with YouTube or Google, nor endorsed by them. YouTube and YouTube Music are trademarks of Google LLC.</p>
+  <p>Cover art and photos shown in the screenshots belong to their respective owners.</p>
+</footer>
+</div>
+<script>
+  // Closes the mobile menu when a section is chosen. Without JavaScript the menu works the same.
+  document.querySelector(".menu")?.addEventListener("click", e => { if (e.target.closest("a")) e.currentTarget.open = false; });
+</script>
+</body>
+</html>
