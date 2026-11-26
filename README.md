@@ -21,7 +21,7 @@ assets/fonts/               Hanken Grotesk y JetBrains Mono (SIL OFL 1.1, subcon
 assets/img/icono.svg        Icono de la app; icono-32/192/512.png y apple-touch-icon.png derivados de él
 assets/img/capturas/        Capturas reales de la app en WebP (360, 540 y 720 px de ancho)
 herramientas/actualizar_version.py   Regenera los datos de versión desde la última release (ver abajo)
-.github/workflows/actualizar-version.yml   Lo ejecuta automáticamente al publicarse una release
+.github/workflows/actualizar-version.yml   Lo ejecutaba al publicarse una release (desactivado, ver abajo)
 ```
 
 ## Reglas
@@ -45,14 +45,17 @@ Abre `index.html` en el navegador. Como todas las rutas son relativas, se ve igu
 La web está publicada en <https://comunicaa2.github.io/ExtMusic-web/> desde la rama `main` con GitHub Pages (*Deploy from a branch → main / root*). Cada push a `main` la actualiza en uno o dos minutos.
 Antes de subir, revisa los cambios; después, comprueba la web ya desplegada.
 
-## Al publicar una versión nueva de la app (automático)
+## Al publicar una versión nueva de la app (a mano)
 
-**No hay que hacer nada a mano.** Al publicar una release en `Comunicaa2/ExtMusic`:
+**La actualización automática está desactivada** (desde el 26-11-2026). El workflow «Actualizar versión» de este repo está deshabilitado en GitHub, así que publicar una release en `Comunicaa2/ExtMusic` no cambia la web, y tampoco se puede lanzar con *Run workflow*. El workflow `avisar-web.yml` del repo de la app sigue activo.
 
-1. El workflow `avisar-web.yml` del repo de la app avisa a este repo (`repository_dispatch` «nueva-version») con el secreto `WEB_DISPATCH_TOKEN`.
-2. El workflow `actualizar-version.yml` de este repo ejecuta `herramientas/actualizar_version.py`. Si hay cambios, hace un commit como `github-actions[bot]` y GitHub Pages publica la web en uno o dos minutos.
+**Para actualizar la web:**
 
-**Regla:** la release debe tener **un único APK llamado exactamente `ExtMusic.apk`**. Si no, el workflow falla sin tocar la web y GitHub avisa por correo. Si el APK aún se está subiendo, el workflow reintenta durante 3 minutos.
+1. En local, ejecuta `python3 herramientas/actualizar_version.py`.
+2. Revisa los cambios con `git diff`.
+3. Haz commit y push a `main`. GitHub Pages publica la web en uno o dos minutos.
+
+**Regla:** la release debe tener **un único APK llamado exactamente `ExtMusic.apk`**. Si no, el script falla sin tocar la web.
 
 **Qué se regenera.** Solo lo que está entre `<!-- auto:nombre -->` y `<!-- /auto:nombre -->`, en español y en `en/`:
 
@@ -68,14 +71,9 @@ Antes de subir, revisa los cambios; después, comprueba la web ya desplegada.
 
 **Qué NO se regenera.** La tabla de Funciones, la Documentación, la revisión de Privacidad, las capturas y el pie de la Figura 1 siguen diciendo «revisado en la versión 1.4.2». Se escribieron comprobando la app y hay que revisarlos a mano cuando una versión cambie algo de eso.
 
-**Ejecutarlo a mano:**
-
-- desde GitHub: pestaña *Actions* → «Actualizar versión» → *Run workflow*;
-- en local: `python3 herramientas/actualizar_version.py`.
-
 Para probar sin red: `--release-json release.json --changelog-en notas.txt --raiz copia/`.
 
-**Si el aviso deja de funcionar** (por ejemplo, porque caducó el token): crea otro token *fine-grained* con acceso solo a `ExtMusic-web` y permiso *Contents: Read and write*, y guárdalo con `gh secret set WEB_DISPATCH_TOKEN -R Comunicaa2/ExtMusic`. Mientras tanto, la web se puede actualizar a mano con *Run workflow*.
+**Para reactivar la actualización automática:** `gh workflow enable actualizar-version.yml -R Comunicaa2/ExtMusic-web`. El aviso usa el secreto `WEB_DISPATCH_TOKEN` del repo de la app. Si el token ha caducado, crea otro *fine-grained* con acceso solo a `ExtMusic-web` y permiso *Contents: Read and write*, y guárdalo con `gh secret set WEB_DISPATCH_TOKEN -R Comunicaa2/ExtMusic`.
 
 ## Licencias
 
