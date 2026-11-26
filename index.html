@@ -94,31 +94,18 @@
   <section class="marco seccion" id="descripcion" aria-labelledby="t-nombre">
     <p class="titulo-sec"><span class="titulo-sec__num">1</span>Descripción</p>
     <div class="portada">
-      <div>
-        <h1 class="titular" id="t-nombre">ExtMusic</h1>
-        <p class="subtitulo">Reproductor libre de <span class="marcador">YouTube Music sin cuenta</span> y de la música guardada en tu teléfono.</p>
-        <p class="desc">Busca y escucha el catálogo de YouTube Music sin iniciar sesión, descarga canciones para escucharlas sin conexión y reproduce tus archivos locales. Tu biblioteca se guarda solo en el teléfono.</p>
-        <div class="caja">
-          <p class="etiqueta">Características</p>
-          <ul>
-            <li>Búsqueda de canciones, artistas y álbumes</li>
-            <li>Radio automática al terminar la cola</li>
-            <li>Letras sincronizadas (LRCLIB, KuGou, .lrc)</li>
-            <li>Descargas para escuchar sin conexión</li>
-            <li>Música local con filtro por carpeta</li>
-            <li>Playlists e importación por enlace</li>
-            <li>Temporizador de sueño y normalización</li>
-            <li>Copia de seguridad de la biblioteca</li>
-          </ul>
-        </div>
+      <h1 class="titular portada__titulo" id="t-nombre">ExtMusic</h1>
+      <p class="subtitulo portada__sub">Reproductor libre de <span class="marcador">YouTube Music sin cuenta</span> y de la música guardada en tu teléfono.</p>
+      <div class="portada__acc">
         <p class="acciones">
           <a class="boton" href="https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic-1.4.2.apk">Descargar APK <span class="boton__detalle">v1.4.2 · 4,8 MB</span></a>
           <a class="enlace-flecha" href="https://github.com/Comunicaa2/ExtMusic">Código fuente</a>
         </p>
         <p class="hechos">Android 8.0+ · GPL-3.0 · Sin cuenta · Sin anuncios · Sin analíticas</p>
       </div>
+      <p class="desc portada__desc">Busca y escucha el catálogo de YouTube Music sin iniciar sesión, descarga canciones para escucharlas sin conexión y reproduce tus archivos locales. Tu biblioteca se guarda solo en el teléfono. Todas las funciones están en la <a href="#funciones">Tabla 1</a>.</p>
 
-      <figure class="figura">
+      <figure class="figura portada__figura">
         <div class="anotada">
           <div class="lamina">
             <img src="assets/img/capturas/reproductor-540.webp"
@@ -161,6 +148,9 @@
         <thead><tr><th scope="col">Función</th><th scope="col">Descripción</th><th scope="col">Requisito</th></tr></thead>
         <tbody>
           <tr><th scope="row">Búsqueda</th><td>Canciones, artistas y álbumes de YouTube Music, con filtros. Sin iniciar sesión.</td><td class="nota">Conexión a internet</td></tr>
+          <tr><th scope="row">Radio</th><td>Al terminar la cola sigue con canciones parecidas (radio de YouTube Music).</td><td class="nota">Se puede desactivar</td></tr>
+          <tr><th scope="row">Biblioteca</th><td>Me gusta, playlists propias e importación de playlists de YouTube por enlace.</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Reproducción</th><td>Cola editable (arrastrar para reordenar) y temporizador de sueño.</td><td class="nota">—</td></tr>
           <tr><th scope="row">Inicio</th><td>Selección rápida, escuchar de nuevo y mixes de tus artistas. Opción «No recomendar».</td><td class="nota">—</td></tr>
           <tr><th scope="row">Letras</th><td>Sincronizadas desde LRCLIB, con KuGou de respaldo, y archivos <code>.lrc</code> locales. Se pueden guardar para verlas sin conexión.</td><td class="nota">—</td></tr>
           <tr><th scope="row">Descargas</th><td>Guarda canciones para escucharlas sin conexión, con la opción de descargar solo con Wi-Fi.</td><td class="nota">—</td></tr>
@@ -275,5 +265,9 @@
   <p>Las portadas y fotos que aparecen en las capturas pertenecen a sus respectivos autores.</p>
 </footer>
 </div>
+<script>
+  // Cierra el menú móvil al elegir una sección. Sin JavaScript el menú funciona igual.
+  document.querySelector(".menu")?.addEventListener("click", e => { if (e.target.closest("a")) e.currentTarget.open = false; });
+</script>
 </body>
 </html>

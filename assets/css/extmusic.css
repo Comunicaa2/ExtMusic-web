@@ -227,14 +227,17 @@ h3,.h3{font:700 var(--t-h3)/1.25 var(--f-sans)}
 
 /* ---------- Añadidos en la Fase 4 (página principal) ---------- */
 /* Portada: texto + figura anotada */
-.portada{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:var(--hueco) calc(var(--hueco)*1.6)}
+.portada{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);column-gap:calc(var(--hueco)*1.6);
+  grid-template-areas:"titulo figura" "sub figura" "desc figura" "acc figura" ". figura";grid-template-rows:auto auto auto auto 1fr}
+.portada__titulo{grid-area:titulo}.portada__sub{grid-area:sub}.portada__desc{grid-area:desc}.portada__acc{grid-area:acc}.portada__figura{grid-area:figura}
+/* En móvil: lo esencial primero (qué es, descargar, la app) y después la descripción */
 .acciones{display:flex;flex-wrap:wrap;align-items:center;gap:var(--e-3) var(--e-5);margin:0}
 /* Lista de novedades de una versión */
 .novedades{margin:0 0 var(--e-4);padding:0;list-style:none;max-width:var(--medida)}
 .novedades li{padding:10px 0;border-bottom:var(--b-fino)}
 /* Idioma aún no disponible (no es un enlace) */
 .idioma [aria-disabled="true"]{color:var(--c-suave);padding:6px 2px;cursor:default}
-@media (max-width:900px){.portada{grid-template-columns:1fr}}
+@media (max-width:900px){.portada{grid-template-columns:1fr;grid-template-areas:"titulo" "sub" "acc" "figura" "desc";grid-template-rows:none}.portada__figura{margin-top:var(--e-6)}.portada__desc{margin-top:var(--e-5)}}
 
 /* ---------- Movimiento reducido ---------- */
 @media (prefers-reduced-motion:reduce){
