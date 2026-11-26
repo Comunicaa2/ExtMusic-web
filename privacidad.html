@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacidad y seguridad · ExtMusic</title>
+<meta name="description" content="Qué datos guarda ExtMusic y dónde, a qué servicios se conecta, qué permisos pide y cómo verifica sus actualizaciones. Hechos comprobados en el código de la versión 1.4.2.">
+<link rel="canonical" href="https://comunicaa2.github.io/ExtMusic-web/privacidad.html">
+<meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#190e0b" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/img/icono.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/icono-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="ExtMusic">
+<meta property="og:title" content="Privacidad y seguridad · ExtMusic">
+<meta property="og:description" content="Sin cuenta, sin anuncios y sin analíticas. Qué guarda ExtMusic, con quién se conecta y qué permisos pide.">
+<meta property="og:url" content="https://comunicaa2.github.io/ExtMusic-web/privacidad.html">
+<meta property="og:image" content="https://comunicaa2.github.io/ExtMusic-web/assets/img/icono-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="preload" href="assets/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/extmusic.css">
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<div class="hoja">
+
+<header>
+  <div class="marco doc">
+    <a class="marca" href="index.html" aria-label="ExtMusic, inicio"><img src="assets/img/icono.svg" alt="" width="28" height="28">ExtMusic</a>
+    <span class="doc__tipo">Reproductor de música para Android</span>
+    <span class="doc__rev">v1.4.2 · 25-11-2026</span>
+    <div class="idioma" role="group" aria-label="Idioma">
+      <a href="privacidad.html" aria-current="true" lang="es">ES</a>
+      <span aria-hidden="true">/</span>
+      <span lang="en" aria-disabled="true" title="English version coming soon">EN<span class="visualmente-oculto"> (próximamente)</span></span>
+    </div>
+  </div>
+  <nav class="marco indice" aria-label="Principal">
+    <ol>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#funciones">Funciones</a></li>
+      <li><a href="versiones.html">Versiones</a></li>
+      <li><a href="privacidad.html" aria-current="page">Privacidad</a></li>
+      <li class="indice__descarga"><a href="#descarga">↓ Descargar v1.4.2</a></li>
+    </ol>
+  </nav>
+  <details class="marco menu">
+    <summary>Contenido</summary>
+    <nav aria-label="Principal (móvil)">
+      <ol>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#funciones">Funciones</a></li>
+        <li><a href="versiones.html">Versiones</a></li>
+        <li><a href="privacidad.html" aria-current="page">Privacidad</a></li>
+        <li><a href="#descarga">Descargar v1.4.2</a></li>
+      </ol>
+    </nav>
+  </details>
+</header>
+
+<main id="contenido">
+  <section class="marco seccion" aria-labelledby="t-pagina">
+    <h1 class="titular" id="t-pagina">Privacidad y seguridad</h1>
+    <p class="subtitulo">Qué guarda ExtMusic, con quién se conecta y cómo se protege. <span class="marcador">Solo hechos comprobados</span> en el código.</p>
+    <div class="aviso"><p><strong>Alcance:</strong> esta página resume una revisión del código de la versión 1.4.2 hecha para esta web el 25-11-2026. No es una auditoría de seguridad independiente.</p></div>
+  </section>
+
+  <section class="marco seccion" id="resumen" aria-labelledby="t-resumen">
+    <h2 class="titulo-sec" id="t-resumen"><span class="titulo-sec__num">1</span>Resumen</h2>
+    <div class="tabla">
+      <table class="datos">
+        <caption>Tabla 1. En pocas palabras</caption>
+        <thead><tr><th scope="col">Pregunta</th><th scope="col">Respuesta</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">¿Necesita cuenta?</th><td>No. La app no tiene cuentas ni te pide datos personales.</td></tr>
+          <tr><th scope="row">¿Muestra anuncios?</th><td>No.</td></tr>
+          <tr><th scope="row">¿Envía analíticas?</th><td>No incluye librerías de analíticas ni de informes de errores.</td></tr>
+          <tr><th scope="row">¿Dónde está mi biblioteca?</th><td>En el teléfono. ExtMusic no tiene servidores propios.</td></tr>
+          <tr><th scope="row">¿Quién ve lo que escucho?</th><td>Los servicios a los que se conecta para funcionar (YouTube, LRCLIB, KuGou y, para actualizar, GitHub) reciben las peticiones de red normales: por ejemplo, tu dirección IP y lo que buscas o reproduces. Cada uno se rige por su propia política de privacidad.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="marco seccion" id="datos" aria-labelledby="t-datos">
+    <h2 class="titulo-sec" id="t-datos"><span class="titulo-sec__num">2</span>Qué se guarda y dónde</h2>
+    <div class="tabla">
+      <table class="datos datos--apilable">
+        <caption>Tabla 2. Datos que guarda la app</caption>
+        <thead><tr><th scope="col">Dato</th><th scope="col">Dónde</th><th scope="col">Cómo se borra</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Me gusta, playlists, historial y recomendaciones</th><td>En la base de datos interna de la app, separados por <strong>perfiles de gusto</strong>.</td><td class="nota">Al borrar un perfil se borran su historial, sus Me gusta y sus playlists («Las descargas no se tocan»). Los datos internos se borran al desinstalar la app.</td></tr>
+          <tr><th scope="row">Audio temporal y portadas</th><td>Caché interna, con un máximo que eliges en Ajustes. Si al teléfono le queda poco espacio, baja a 32 MB.</td><td class="nota">Ajustes → «Liberar espacio» («Descargas, Me gusta y playlists no se tocan»).</td></tr>
+          <tr><th scope="row">Canciones descargadas</th><td>En la carpeta de la app o en la que elijas.</td><td class="nota">Con «Eliminar descarga» en la app, o borrando los archivos.</td></tr>
+          <tr><th scope="row">Copia de seguridad</th><td>Un archivo <code>.extmusic</code> con me gusta, playlists, historial, cola y ajustes, <strong>solo cuando tú la exportas</strong> y donde la guardes.</td><td class="nota">Borrando el archivo.</td></tr>
+          <tr><th scope="row">Copia automática de Android</th><td><strong>Desactivada</strong> (<code>allowBackup="false"</code>): los datos de ExtMusic no se suben a la copia de seguridad de Google.</td><td class="nota nota--vacia">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="marco seccion" id="conexiones" aria-labelledby="t-conexiones">
+    <h2 class="titulo-sec" id="t-conexiones"><span class="titulo-sec__num">3</span>Conexiones de red</h2>
+    <div class="tabla">
+      <table class="datos datos--apilable">
+        <caption>Tabla 3. Servicios a los que se conecta ExtMusic</caption>
+        <thead><tr><th scope="col">Servicio</th><th scope="col">Para qué</th><th scope="col">Qué recibe, además de la petición</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><code>music.youtube.com</code><br><code>www.youtube.com</code></th><td>Catálogo, búsqueda, recomendaciones y datos para reproducir.</td><td class="nota">Lo que buscas y lo que pides reproducir.</td></tr>
+          <tr><th scope="row"><code>*.googlevideo.com</code></th><td>El audio de las canciones (servidores de contenido de YouTube).</td><td class="nota">Qué canción se está reproduciendo.</td></tr>
+          <tr><th scope="row"><code>ytimg.com</code> · <code>ggpht.com</code><br><code>googleusercontent.com</code></th><td>Portadas y fotos de artistas.</td><td class="nota">Qué imagen se pide.</td></tr>
+          <tr><th scope="row"><code>lrclib.net</code></th><td>Letras sincronizadas.</td><td class="nota">Título, artista y duración de la canción.</td></tr>
+          <tr><th scope="row"><code>lyrics.kugou.com</code></th><td>Letras de respaldo, si LRCLIB no tiene.</td><td class="nota">Título, artista y duración de la canción.</td></tr>
+          <tr><th scope="row"><code>api.github.com</code><br><code>github.com</code></th><td>Buscar y descargar actualizaciones. <strong>Solo en la versión descargada de GitHub.</strong></td><td class="nota">Que se consulta la última versión publicada.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:var(--e-4)">Todo el tráfico va cifrado (HTTPS).</p>
+  </section>
+
+  <section class="marco seccion" id="permisos" aria-labelledby="t-permisos">
+    <h2 class="titulo-sec" id="t-permisos"><span class="titulo-sec__num">4</span>Permisos</h2>
+    <div class="tabla">
+      <table class="datos">
+        <caption>Tabla 4. Permisos declarados en la app (versión 1.4.2)</caption>
+        <thead><tr><th scope="col">Permiso</th><th scope="col">Para qué</th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><code>INTERNET</code></th><td>Escuchar, buscar, obtener letras y buscar actualizaciones.</td></tr>
+          <tr><th scope="row"><code>ACCESS_NETWORK_STATE</code></th><td>Saber si hay conexión y si es Wi-Fi (para «Descargar solo con Wi-Fi»).</td></tr>
+          <tr><th scope="row"><code>READ_MEDIA_AUDIO</code><br><code>READ_EXTERNAL_STORAGE</code> <span class="nota">(hasta Android 12)</span></th><td>Leer la música guardada en el teléfono. Se pide al abrir la pestaña Local.</td></tr>
+          <tr><th scope="row"><code>WRITE_EXTERNAL_STORAGE</code> <span class="nota">(hasta Android 10)</span></th><td>Guardar descargas en versiones antiguas de Android.</td></tr>
+          <tr><th scope="row"><code>FOREGROUND_SERVICE</code><br><code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code></th><td>Seguir reproduciendo en segundo plano, con la notificación de reproducción.</td></tr>
+          <tr><th scope="row"><code>WAKE_LOCK</code></th><td>Que la música no se corte con la pantalla apagada.</td></tr>
+          <tr><th scope="row"><code>POST_NOTIFICATIONS</code></th><td>Controles de reproducción y avisos de descargas y actualizaciones. Se pide la primera vez.</td></tr>
+          <tr><th scope="row"><code>MODIFY_AUDIO_SETTINGS</code></th><td>Efectos de audio como la normalización de volumen.</td></tr>
+          <tr><th scope="row"><code>REQUEST_IGNORE_BATTERY_OPTIMIZATIONS</code></th><td>Pedirte que Android no detenga la música en segundo plano. Tú decides.</td></tr>
+          <tr><th scope="row"><code>REQUEST_INSTALL_PACKAGES</code></th><td>Instalar sus propias actualizaciones verificadas. Solo en la versión de GitHub, y Android te pide confirmarlo.</td></tr>
+          <tr><th scope="row"><code>RECEIVE_BOOT_COMPLETED</code> <span class="nota">(lo añade WorkManager)</span></th><td>Reanudar descargas pendientes después de reiniciar el teléfono.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="marco seccion" id="seguridad" aria-labelledby="t-seguridad">
+    <h2 class="titulo-sec" id="t-seguridad"><span class="titulo-sec__num">5</span>Seguridad técnica</h2>
+    <ul>
+      <li><strong>Solo HTTPS.</strong> El tráfico sin cifrar está bloqueado (<code>cleartextTrafficPermitted="false"</code>).</li>
+      <li><strong>Solo certificados del sistema.</strong> La versión publicada no confía en certificados instalados por el usuario, lo que dificulta interceptar su tráfico. Las versiones de desarrollo sí los aceptan, para depurar.</li>
+      <li><strong>Dependencias corregidas.</strong> La app fuerza versiones corregidas de dos librerías que llegan de forma indirecta (jsoup y Guava) por avisos de seguridad publicados.</li>
+      <li><strong>Código abierto.</strong> Todo el código está en <a href="https://github.com/Comunicaa2/ExtMusic">GitHub</a> bajo GPL-3.0-or-later; cualquiera puede revisarlo.</li>
+    </ul>
+  </section>
+
+  <section class="marco seccion" id="actualizaciones" aria-labelledby="t-actualizaciones">
+    <h2 class="titulo-sec" id="t-actualizaciones"><span class="titulo-sec__num">6</span>Actualizaciones verificadas</h2>
+    <p>La raíz de la confianza es la <strong>clave con la que se firman los APK</strong> publicados: la misma que usa Android para aceptar o rechazar una actualización. El actualizador solo aparece en las copias firmadas con esa clave (las de GitHub).</p>
+    <div class="tabla">
+      <table class="datos">
+        <caption>Tabla 5. Qué se comprueba antes de instalar</caption>
+        <thead><tr><th scope="col">Comprobación</th><th scope="col">Si falla</th></tr></thead>
+        <tbody>
+          <tr><td>La release tiene un único APK, de <code>github.com/Comunicaa2/ExtMusic</code>, de 1 B a 50 MB y con huella SHA-256 publicada.</td><td class="nota">No se ofrece nada.</td></tr>
+          <tr><td>La versión publicada es más nueva que la instalada.</td><td class="nota">No se ofrece nada.</td></tr>
+          <tr><td>La descarga no supera el tamaño publicado y su SHA-256 coincide.</td><td class="nota">Se borra: «La descarga no coincidía…».</td></tr>
+          <tr><td>Antes de ofrecer instalarla: mismo paquete, número de versión mayor y la misma firma que la app instalada.</td><td class="nota">Se borra: «La APK no era válida…».</td></tr>
+          <tr><td>Al pulsar Instalar se comprueba todo otra vez; después, Android vuelve a verificar firma y versión.</td><td class="nota">No se abre el instalador.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dos-col" style="margin-top:var(--e-6)">
+      <div>
+        <h3>Amenazas cubiertas</h3>
+        <ul>
+          <li>Un APK alterado por el camino.</li>
+          <li>Una release falsa en una cuenta de GitHub comprometida: sin la clave de firma no se puede hacer un APK que pase.</li>
+          <li>Descargas cortadas o interrumpidas.</li>
+          <li>Volver a una versión anterior.</li>
+          <li>Copias con otra firma.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>No cubiertas</h3>
+        <ul>
+          <li>Quien controle la cuenta de GitHub podría <strong>esconder</strong> una versión nueva.</li>
+          <li>O poner un <strong>texto falso</strong> en las novedades. Por eso se muestran como texto plano, sin enlaces.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:var(--e-4)">Huella SHA-256 del certificado de firma: <span class="hash">7492411a3df91a2128010740826791eed78f15deba2a962bea2ca6e9e2a3e2a7</span>. Cómo comprobarla: <a href="versiones.html#comprobar">Versiones → Comprobar el archivo</a>.</p>
+  </section>
+
+  <section class="marco seccion" id="web" aria-labelledby="t-web">
+    <h2 class="titulo-sec" id="t-web"><span class="titulo-sec__num">7</span>Esta web</h2>
+    <p>Esta web no usa cookies, ni analíticas, ni recursos de otros dominios: las fuentes y las imágenes se sirven desde el propio sitio. Está alojada en GitHub Pages, así que GitHub, como cualquier servidor, recibe las peticiones de quien la visita según su propia política de privacidad.</p>
+  </section>
+
+  <section class="bloque-descarga" id="descarga" aria-labelledby="t-descarga">
+    <div class="marco bloque-descarga__rejilla">
+      <div>
+        <h2 id="t-descarga">Descárgala de la fuente oficial.</h2>
+        <p>ExtMusic se publica solo en <a href="https://github.com/Comunicaa2/ExtMusic/releases">GitHub Releases</a>. La versión de GitHub te avisa de las nuevas y comprueba la huella y la firma antes de instalarlas.</p>
+        <a class="boton" href="https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic-1.4.2.apk">Descargar ExtMusic 1.4.2 <span class="boton__detalle">4,8 MB</span></a>
+      </div>
+      <div>
+        <p class="etiqueta" style="margin:0">Comprueba el archivo</p>
+        <pre class="codigo">sha256sum ExtMusic-1.4.2.apk
+5c964566b91704ef26e2dc6f13758f6bcfd305b616ddf89def17c4b8e78a213c</pre>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="marco pie">
+  <p class="etiqueta">Notas</p>
+  <p>ExtMusic es software libre bajo GPL-3.0-or-later. <a href="https://github.com/Comunicaa2/ExtMusic">Código fuente en GitHub</a>.</p>
+  <p>ExtMusic no está afiliada a YouTube ni a Google, ni cuenta con su aprobación. YouTube y YouTube Music son marcas de Google LLC.</p>
+  <p>Las portadas y fotos que aparecen en las capturas pertenecen a sus respectivos autores.</p>
+</footer>
+</div>
+<script>
+  // Cierra el menú móvil al elegir una sección. Sin JavaScript el menú funciona igual.
+  document.querySelector(".menu")?.addEventListener("click", e => { if (e.target.closest("a")) e.currentTarget.open = false; });
+</script>
+</body>
+</html>

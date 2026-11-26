@@ -54,22 +54,21 @@
 
 <header>
   <div class="marco doc">
-    <a class="marca" href="./" aria-label="ExtMusic, inicio"><img src="assets/img/icono.svg" alt="" width="28" height="28">ExtMusic</a>
+    <a class="marca" href="index.html" aria-label="ExtMusic, inicio"><img src="assets/img/icono.svg" alt="" width="28" height="28">ExtMusic</a>
     <span class="doc__tipo">Reproductor de música para Android</span>
     <span class="doc__rev">v1.4.2 · 25-11-2026</span>
     <div class="idioma" role="group" aria-label="Idioma">
-      <a href="./" aria-current="true" lang="es">ES</a>
+      <a href="index.html" aria-current="true" lang="es">ES</a>
       <span aria-hidden="true">/</span>
       <span lang="en" aria-disabled="true" title="English version coming soon">EN<span class="visualmente-oculto"> (próximamente)</span></span>
     </div>
   </div>
   <nav class="marco indice" aria-label="Principal">
     <ol>
-      <li><a href="#descripcion">Descripción</a></li>
+      <li><a href="index.html" aria-current="page">Inicio</a></li>
       <li><a href="#funciones">Funciones</a></li>
-      <li><a href="#novedades">Novedades</a></li>
-      <li><a href="#privacidad">Privacidad</a></li>
-      <li><a href="https://github.com/Comunicaa2/ExtMusic/releases">Versiones ↗<span class="visualmente-oculto"> (en GitHub)</span></a></li>
+      <li><a href="versiones.html">Versiones</a></li>
+      <li><a href="privacidad.html">Privacidad</a></li>
       <li class="indice__descarga"><a href="#descarga">↓ Descargar v1.4.2</a></li>
     </ol>
   </nav>
@@ -77,11 +76,10 @@
     <summary>Contenido</summary>
     <nav aria-label="Principal (móvil)">
       <ol>
-        <li><a href="#descripcion">Descripción</a></li>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
         <li><a href="#funciones">Funciones</a></li>
-        <li><a href="#novedades">Novedades</a></li>
-        <li><a href="#privacidad">Privacidad</a></li>
-        <li><a href="https://github.com/Comunicaa2/ExtMusic/releases">Versiones ↗<span class="visualmente-oculto"> (en GitHub)</span></a></li>
+        <li><a href="versiones.html">Versiones</a></li>
+        <li><a href="privacidad.html">Privacidad</a></li>
         <li><a href="#descarga">Descargar v1.4.2</a></li>
       </ol>
     </nav>
@@ -143,21 +141,21 @@
   <section class="marco seccion" id="funciones" aria-labelledby="t-funciones">
     <h2 class="titulo-sec" id="t-funciones"><span class="titulo-sec__num">2</span>Funciones</h2>
     <div class="tabla">
-      <table class="datos">
+      <table class="datos datos--apilable">
         <caption>Tabla 1. Funciones de la versión 1.4.2</caption>
         <thead><tr><th scope="col">Función</th><th scope="col">Descripción</th><th scope="col">Requisito</th></tr></thead>
         <tbody>
           <tr><th scope="row">Búsqueda</th><td>Canciones, artistas y álbumes de YouTube Music, con filtros. Sin iniciar sesión.</td><td class="nota">Conexión a internet</td></tr>
           <tr><th scope="row">Radio</th><td>Al terminar la cola sigue con canciones parecidas (radio de YouTube Music).</td><td class="nota">Se puede desactivar</td></tr>
-          <tr><th scope="row">Biblioteca</th><td>Me gusta, playlists propias e importación de playlists de YouTube por enlace.</td><td class="nota">—</td></tr>
-          <tr><th scope="row">Reproducción</th><td>Cola editable (arrastrar para reordenar) y temporizador de sueño.</td><td class="nota">—</td></tr>
-          <tr><th scope="row">Inicio</th><td>Selección rápida, escuchar de nuevo y mixes de tus artistas. Opción «No recomendar».</td><td class="nota">—</td></tr>
-          <tr><th scope="row">Letras</th><td>Sincronizadas desde LRCLIB, con KuGou de respaldo, y archivos <code>.lrc</code> locales. Se pueden guardar para verlas sin conexión.</td><td class="nota">—</td></tr>
-          <tr><th scope="row">Descargas</th><td>Guarda canciones para escucharlas sin conexión, con la opción de descargar solo con Wi-Fi.</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Biblioteca</th><td>Me gusta, playlists propias e importación de playlists de YouTube por enlace.</td><td class="nota nota--vacia">—</td></tr>
+          <tr><th scope="row">Reproducción</th><td>Cola editable (arrastrar para reordenar) y temporizador de sueño.</td><td class="nota nota--vacia">—</td></tr>
+          <tr><th scope="row">Inicio</th><td>Selección rápida, escuchar de nuevo y mixes de tus artistas. Opción «No recomendar».</td><td class="nota nota--vacia">—</td></tr>
+          <tr><th scope="row">Letras</th><td>Sincronizadas desde LRCLIB, con KuGou de respaldo, y archivos <code>.lrc</code> locales. Se pueden guardar para verlas sin conexión.</td><td class="nota nota--vacia">—</td></tr>
+          <tr><th scope="row">Descargas</th><td>Guarda canciones para escucharlas sin conexión, con la opción de descargar solo con Wi-Fi.</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Música local</th><td>Reproduce la música del teléfono, con filtro por carpeta.</td><td class="nota">Permiso de audio</td></tr>
           <tr><th scope="row">Normalización</th><td>Sube las canciones flojas y suaviza los picos de volumen.</td><td class="nota">Android 9+</td></tr>
           <tr><th scope="row">Apariencia</th><td>Temas claro, oscuro y AMOLED; fondo con el color de la portada; vidrio líquido.</td><td class="nota">Refracción: Android 13+</td></tr>
-          <tr><th scope="row">Copia de seguridad</th><td>Exporta e importa me gusta, playlists, historial, cola y ajustes en un archivo <code>.extmusic</code>.</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Copia de seguridad</th><td>Exporta e importa me gusta, playlists, historial, cola y ajustes en un archivo <code>.extmusic</code>.</td><td class="nota nota--vacia">—</td></tr>
         </tbody>
       </table>
     </div>
@@ -188,23 +186,23 @@
       <li>Pide permiso para mostrar notificaciones la primera vez.</li>
     </ul>
     <p class="desc" style="font-size:var(--t-nota)"><strong>Cómo funciona la actualización:</strong> la app descarga la versión nueva desde GitHub, comprueba su huella SHA-256 y su firma, y abre el instalador de Android para que tú confirmes. Solo en la versión descargada de GitHub.</p>
-    <p><a class="enlace-flecha" href="https://github.com/Comunicaa2/ExtMusic/releases">Todas las versiones en GitHub</a></p>
+    <p><a class="enlace-flecha" href="versiones.html">Todas las versiones, con sus notas y huellas</a></p>
   </section>
 
   <!-- 4 · Privacidad y especificaciones -->
   <section class="marco seccion" id="privacidad" aria-labelledby="t-privacidad">
     <h2 class="titulo-sec" id="t-privacidad"><span class="titulo-sec__num">4</span>Privacidad y especificaciones</h2>
     <div class="tabla">
-      <table class="datos">
+      <table class="datos datos--apilable">
         <caption>Tabla 2. Especificaciones generales</caption>
         <thead><tr><th scope="col">Parámetro</th><th scope="col">Valor</th><th scope="col">Notas</th></tr></thead>
         <tbody>
           <tr><th scope="row">Versión</th><td>1.4.2</td><td class="nota">25-11-2026</td></tr>
-          <tr><th scope="row">Sistema</th><td>Android 8.0 (API 26) o superior</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Sistema</th><td>Android 8.0 (API 26) o superior</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Tamaño del APK</th><td>4,8 MB</td><td class="nota">ExtMusic-1.4.2.apk</td></tr>
           <tr><th scope="row">Licencia</th><td>GPL-3.0-or-later</td><td class="nota">Software libre</td></tr>
-          <tr><th scope="row">Cuenta</th><td>No necesaria</td><td class="nota">—</td></tr>
-          <tr><th scope="row">Anuncios</th><td>Ninguno</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Cuenta</th><td>No necesaria</td><td class="nota nota--vacia">—</td></tr>
+          <tr><th scope="row">Anuncios</th><td>Ninguno</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Analíticas</th><td>Ninguna</td><td class="nota">Sin librerías de analíticas ni de informes de errores</td></tr>
           <tr><th scope="row">Tus datos</th><td>Solo en el teléfono</td><td class="nota">Copia de seguridad exportable (.extmusic)</td></tr>
           <tr><th scope="row">SHA-256</th><td colspan="2"><span class="hash">5c964566b91704ef26e2dc6f13758f6bcfd305b616ddf89def17c4b8e78a213c</span></td></tr>
@@ -238,6 +236,7 @@
         </table>
       </div>
     </div>
+    <p style="margin-top:var(--e-5)"><a class="enlace-flecha" href="privacidad.html">Más detalle en Privacidad y seguridad</a></p>
   </section>
 
   <!-- Bloque ámbar de descarga -->

@@ -239,6 +239,23 @@ h3,.h3{font:700 var(--t-h3)/1.25 var(--f-sans)}
 .idioma [aria-disabled="true"]{color:var(--c-suave);padding:6px 2px;cursor:default}
 @media (max-width:900px){.portada{grid-template-columns:1fr;grid-template-areas:"titulo" "sub" "acc" "figura" "desc";grid-template-rows:none}.portada__figura{margin-top:var(--e-6)}.portada__desc{margin-top:var(--e-5)}}
 
+/* Historial de versiones (versiones.html) */
+.version{padding-block:var(--e-5);border-bottom:var(--b-fino)}
+.version:first-of-type{padding-top:0}
+.version h3{display:flex;flex-wrap:wrap;gap:var(--e-2) var(--e-3);align-items:baseline;margin:0 0 var(--e-2)}
+.version__actual{background:var(--c-resalte);color:var(--c-tinta);padding:2px 6px}
+.version .hechos{margin-top:var(--e-3);overflow-wrap:anywhere}
+
+/* Tablas de 3 columnas: en pantallas estrechas cada fila se apila (título, texto, nota) */
+@media (max-width:560px){
+  .datos--apilable thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .datos--apilable tr{display:block;padding:10px 0;border-bottom:var(--b-fino)}
+  .datos--apilable th,.datos--apilable td{display:block;border:0;padding:2px 0}
+  .datos--apilable tbody th,.datos--apilable td.clave{white-space:normal}
+  .datos--apilable td.nota{margin-top:2px}
+  .datos--apilable td.nota--vacia{display:none}
+}
+
 /* ---------- Movimiento reducido ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:0s!important;animation-duration:0s!important;scroll-behavior:auto!important}

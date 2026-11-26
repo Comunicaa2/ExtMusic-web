@@ -9,6 +9,8 @@ Es un sitio estático para GitHub Pages: HTML y CSS escritos a mano, sin depende
 
 ```
 index.html                  Página principal (español)
+versiones.html              Versión actual, instalación, comprobación y historial
+privacidad.html             Privacidad y seguridad (hechos comprobados en el código)
 .nojekyll                   GitHub Pages sirve los archivos tal cual, sin Jekyll
 assets/css/extmusic.css     Sistema de diseño «Datasheet»: tokens + componentes, claro y oscuro automático
 assets/fonts/               Hanken Grotesk y JetBrains Mono (SIL OFL 1.1, subconjunto latino) + licencias
@@ -21,6 +23,7 @@ assets/img/capturas/        Capturas reales de la app en WebP (360, 540 y 720 px
 - **Rutas siempre relativas** (`assets/...`). El sitio se publica en `https://comunicaa2.github.io/ExtMusic-web/`, no en la raíz de un dominio.
 - **Sin recursos externos.** Las fuentes y las imágenes se sirven desde el propio sitio, y no hay analíticas ni scripts de terceros.
 - **JavaScript mínimo y opcional.** Solo hay un script en línea (una línea) que cierra el menú móvil al elegir una sección; sin JavaScript todo funciona igual.
+- **Cabecera, menú, script y pie son iguales en todas las páginas** (copiados a mano, sin paso de construcción). Si cambias uno, cambia todos; en cada página solo varía qué enlace lleva `aria-current="page"`.
 - **Capturas reales y sin editar.** Se generan desde los PNG originales con ImageMagick:
   `magick captura.png -resize 720x -quality 82 -define webp:method=6 nombre-720.webp` (y lo mismo a 540 y 360).
 - **Solo datos verificables** (versión, tamaño, huella SHA-256, permisos…), sacados del repositorio de la app y de sus releases.
@@ -36,7 +39,7 @@ Antes de publicar hay que revisar los cambios y comprobar la web ya desplegada.
 
 ## Al publicar una versión nueva de la app
 
-Actualiza en `index.html` la versión, la fecha, el tamaño del APK, la huella SHA-256, las URL de descarga y la lista de novedades.
+Actualiza en `index.html` y `versiones.html` (y en la cabecera de todas las páginas) la versión, la fecha, el tamaño del APK, la huella SHA-256, las URL de descarga y la lista de novedades.
 La huella se obtiene así:
 
 ```sh
