@@ -85,6 +85,9 @@
 /* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* Desplazamiento suave solo al saltar a una sección con un enlace interno; nunca con movimiento reducido */
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.seccion[id],.bloque-descarga[id]{scroll-margin-top:var(--e-4)}
 body{margin:0;background:var(--c-fondo);color:var(--c-tinta);font:400 var(--t-texto)/1.6 var(--f-sans);text-rendering:optimizeLegibility}
 img,svg{max-width:100%;height:auto;display:block}
 p,li{max-width:var(--medida)}
