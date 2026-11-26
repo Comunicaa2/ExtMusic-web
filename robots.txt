@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://comunicaa2.github.io/ExtMusic-web/sitemap.xml

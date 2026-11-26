@@ -267,6 +267,13 @@ h3,.h3{font:700 var(--t-h3)/1.25 var(--f-sans)}
 @media (max-width:900px){.doc-col{grid-template-columns:1fr}.doc-col .figura{max-width:260px}}
 @media (max-width:560px){.toc ol{columns:1}}
 
+/* Utilidades pequeñas (sustituyen a estilos en línea) */
+.m-0{margin:0!important}.mt-4{margin-top:var(--e-4)!important}.mt-5{margin-top:var(--e-5)!important}.mt-6{margin-top:var(--e-6)!important}.mb-5{margin-bottom:var(--e-5)!important}
+.texto-nota{font-size:var(--t-nota)}
+.nota-pie{font-size:var(--t-pequeno);color:var(--c-suave)}
+.etiqueta--suave{color:var(--c-suave);margin:0 0 var(--e-3)}
+.titular--sec{font-size:clamp(2rem,1.4rem + 2.4vw,3.25rem)}
+
 /* ---------- Movimiento reducido ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:0s!important;animation-duration:0s!important;scroll-behavior:auto!important}
