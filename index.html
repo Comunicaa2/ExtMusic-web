@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExtMusic · Reproductor de música libre para Android</title>
+<meta name="description" content="ExtMusic es un reproductor de música libre para Android: escucha YouTube Music sin cuenta ni anuncios, descarga canciones y reproduce la música de tu teléfono. GPL-3.0.">
+<link rel="canonical" href="https://comunicaa2.github.io/ExtMusic-web/">
+<meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#190e0b" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+
+<link rel="icon" href="assets/img/icono.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/icono-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="ExtMusic">
+<meta property="og:title" content="ExtMusic · Reproductor de música libre para Android">
+<meta property="og:description" content="Escucha YouTube Music sin cuenta ni anuncios y la música de tu teléfono. Software libre (GPL-3.0).">
+<meta property="og:url" content="https://comunicaa2.github.io/ExtMusic-web/">
+<meta property="og:image" content="https://comunicaa2.github.io/ExtMusic-web/assets/img/icono-512.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="Icono de ExtMusic: una onda ámbar sobre fondo marrón oscuro">
+<meta name="twitter:card" content="summary">
+
+<link rel="preload" href="assets/fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/extmusic.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ExtMusic",
+  "url": "https://comunicaa2.github.io/ExtMusic-web/",
+  "image": "https://comunicaa2.github.io/ExtMusic-web/assets/img/icono-512.png",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Android 8.0 o superior",
+  "softwareVersion": "1.4.2",
+  "fileSize": "4.8MB",
+  "downloadUrl": "https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic-1.4.2.apk",
+  "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "sameAs": ["https://github.com/Comunicaa2/ExtMusic"]
+}
+</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<div class="hoja">
+
+<header>
+  <div class="marco doc">
+    <a class="marca" href="./" aria-label="ExtMusic, inicio"><img src="assets/img/icono.svg" alt="" width="28" height="28">ExtMusic</a>
+    <span class="doc__tipo">Reproductor de música para Android</span>
+    <span class="doc__rev">v1.4.2 · 25-11-2026</span>
+    <div class="idioma" role="group" aria-label="Idioma">
+      <a href="./" aria-current="true" lang="es">ES</a>
+      <span aria-hidden="true">/</span>
+      <span lang="en" aria-disabled="true" title="English version coming soon">EN<span class="visualmente-oculto"> (próximamente)</span></span>
+    </div>
+  </div>
+  <nav class="marco indice" aria-label="Principal">
+    <ol>
+      <li><a href="#descripcion">Descripción</a></li>
+      <li><a href="#funciones">Funciones</a></li>
+      <li><a href="#novedades">Novedades</a></li>
+      <li><a href="#privacidad">Privacidad</a></li>
+      <li><a href="https://github.com/Comunicaa2/ExtMusic/releases">Versiones</a></li>
+      <li class="indice__descarga"><a href="#descarga">↓ Descargar v1.4.2</a></li>
+    </ol>
+  </nav>
+  <details class="marco menu">
+    <summary>Contenido</summary>
+    <nav aria-label="Principal (móvil)">
+      <ol>
+        <li><a href="#descripcion">Descripción</a></li>
+        <li><a href="#funciones">Funciones</a></li>
+        <li><a href="#novedades">Novedades</a></li>
+        <li><a href="#privacidad">Privacidad</a></li>
+        <li><a href="https://github.com/Comunicaa2/ExtMusic/releases">Versiones</a></li>
+        <li><a href="#descarga">Descargar v1.4.2</a></li>
+      </ol>
+    </nav>
+  </details>
+</header>
+
+<main id="contenido">
+
+  <!-- 1 · Descripción -->
+  <section class="marco seccion" id="descripcion" aria-labelledby="t-nombre">
+    <p class="titulo-sec"><span class="titulo-sec__num">1</span>Descripción</p>
+    <div class="portada">
+      <div>
+        <h1 class="titular" id="t-nombre">ExtMusic</h1>
+        <p class="subtitulo">Reproductor libre de <span class="marcador">YouTube Music sin cuenta</span> y de la música guardada en tu teléfono.</p>
+        <p class="desc">Busca y escucha el catálogo de YouTube Music sin iniciar sesión, descarga canciones para escucharlas sin conexión y reproduce tus archivos locales. Tu biblioteca se guarda solo en el teléfono.</p>
+        <div class="caja">
+          <p class="etiqueta">Características</p>
+          <ul>
+            <li>Búsqueda de canciones, artistas y álbumes</li>
+            <li>Radio automática al terminar la cola</li>
+            <li>Letras sincronizadas (LRCLIB, KuGou, .lrc)</li>
+            <li>Descargas para escuchar sin conexión</li>
+            <li>Música local con filtro por carpeta</li>
+            <li>Playlists e importación por enlace</li>
+            <li>Temporizador de sueño y normalización</li>
+            <li>Copia de seguridad de la biblioteca</li>
+          </ul>
+        </div>
+        <p class="acciones">
+          <a class="boton" href="https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic-1.4.2.apk">Descargar APK <span class="boton__detalle">v1.4.2 · 4,8 MB</span></a>
+          <a class="enlace-flecha" href="https://github.com/Comunicaa2/ExtMusic">Código fuente</a>
+        </p>
+        <p class="hechos">Android 8.0+ · GPL-3.0 · Sin cuenta · Sin anuncios · Sin analíticas</p>
+      </div>
+
+      <figure class="figura">
+        <div class="anotada">
+          <div class="lamina">
+            <img src="assets/img/capturas/reproductor-540.webp"
+                 srcset="assets/img/capturas/reproductor-360.webp 360w, assets/img/capturas/reproductor-540.webp 540w, assets/img/capturas/reproductor-720.webp 720w"
+                 sizes="(max-width: 560px) 260px, (max-width: 900px) 240px, 300px"
+                 width="1080" height="2400" fetchpriority="high"
+                 alt="Reproductor de ExtMusic reproduciendo «Don't Stop Me Now» de Queen, con seis puntos numerados que señalan sus partes.">
+            <svg viewBox="0 0 1080 2400" aria-hidden="true">
+              <g class="marca-num"><line x1="540" y1="780" x2="1080" y2="780"/><circle cx="540" cy="780" r="40"/><text x="540" y="782">1</text></g>
+              <g class="marca-num"><line x1="120" y1="1330" x2="0" y2="1330"/><circle cx="120" cy="1330" r="40"/><text x="120" y="1332">2</text></g>
+              <g class="marca-num"><line x1="850" y1="1438" x2="1080" y2="1438"/><circle cx="850" cy="1438" r="40"/><text x="850" y="1440">3</text></g>
+              <g class="marca-num"><line x1="972" y1="1474" x2="1080" y2="1474"/><circle cx="972" cy="1474" r="40"/><text x="972" y="1476">4</text></g>
+              <g class="marca-num"><line x1="300" y1="1914" x2="0" y2="1914"/><circle cx="300" cy="1914" r="40"/><text x="300" y="1916">5</text></g>
+              <g class="marca-num"><line x1="120" y1="2208" x2="0" y2="2208"/><circle cx="120" cy="2208" r="40"/><text x="120" y="2210">6</text></g>
+            </svg>
+          </div>
+          <table class="leyenda">
+            <thead><tr><th scope="col">N.º</th><th scope="col">Elemento</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Portada. Su color tiñe todo el reproductor.</td></tr>
+              <tr><td>2</td><td>Línea de la letra sincronizada, en directo.</td></tr>
+              <tr><td>3</td><td>Indicador de calidad del audio (HQ).</td></tr>
+              <tr><td>4</td><td>Me gusta: guarda la canción en tu biblioteca.</td></tr>
+              <tr><td>5</td><td>Aleatorio, anterior, pausa, siguiente y repetir.</td></tr>
+              <tr><td>6</td><td>Cola: qué suena a continuación.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <figcaption class="pie-figura"><b>Figura 1.</b> Reproductor de ExtMusic 1.4.2 en Android 13. Captura sin editar.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2 · Funciones -->
+  <section class="marco seccion" id="funciones" aria-labelledby="t-funciones">
+    <h2 class="titulo-sec" id="t-funciones"><span class="titulo-sec__num">2</span>Funciones</h2>
+    <div class="tabla">
+      <table class="datos">
+        <caption>Tabla 1. Funciones de la versión 1.4.2</caption>
+        <thead><tr><th scope="col">Función</th><th scope="col">Descripción</th><th scope="col">Requisito</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Búsqueda</th><td>Canciones, artistas y álbumes de YouTube Music, con filtros. Sin iniciar sesión.</td><td class="nota">Conexión a internet</td></tr>
+          <tr><th scope="row">Inicio</th><td>Selección rápida, escuchar de nuevo y mixes de tus artistas. Opción «No recomendar».</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Letras</th><td>Sincronizadas desde LRCLIB, con KuGou de respaldo, y archivos <code>.lrc</code> locales. Se pueden guardar para verlas sin conexión.</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Descargas</th><td>Guarda canciones para escucharlas sin conexión, con la opción de descargar solo con Wi-Fi.</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Música local</th><td>Reproduce la música del teléfono, con filtro por carpeta.</td><td class="nota">Permiso de audio</td></tr>
+          <tr><th scope="row">Normalización</th><td>Sube las canciones flojas y suaviza los picos de volumen.</td><td class="nota">Android 9+</td></tr>
+          <tr><th scope="row">Apariencia</th><td>Temas claro, oscuro y AMOLED; fondo con el color de la portada; vidrio líquido.</td><td class="nota">Refracción: Android 13+</td></tr>
+          <tr><th scope="row">Copia de seguridad</th><td>Exporta e importa me gusta, playlists, historial, cola y ajustes en un archivo <code>.extmusic</code>.</td><td class="nota">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="figuras" style="margin-top:var(--e-6)">
+      <figure class="figura">
+        <div class="lamina lamina--peq"><img src="assets/img/capturas/inicio-540.webp" srcset="assets/img/capturas/inicio-360.webp 360w, assets/img/capturas/inicio-540.webp 540w, assets/img/capturas/inicio-720.webp 720w" sizes="(max-width: 560px) 45vw, (max-width: 900px) 30vw, 345px" width="1080" height="2400" loading="lazy" alt="Pantalla de Inicio de ExtMusic con la Selección rápida, Escuchar de nuevo y el mini reproductor."></div>
+        <figcaption class="pie-figura"><b>Figura 2.</b> Inicio.</figcaption>
+      </figure>
+      <figure class="figura">
+        <div class="lamina lamina--peq"><img src="assets/img/capturas/letras-540.webp" srcset="assets/img/capturas/letras-360.webp 360w, assets/img/capturas/letras-540.webp 540w, assets/img/capturas/letras-720.webp 720w" sizes="(max-width: 560px) 45vw, (max-width: 900px) 30vw, 345px" width="1080" height="2400" loading="lazy" alt="Letras sincronizadas de «Don't Stop Me Now» a pantalla completa, con la línea actual resaltada y la nota «Letra de LRCLIB»."></div>
+        <figcaption class="pie-figura"><b>Figura 3.</b> Letras sincronizadas (LRCLIB).</figcaption>
+      </figure>
+      <figure class="figura">
+        <div class="lamina lamina--peq"><img src="assets/img/capturas/buscar-resultados-540.webp" srcset="assets/img/capturas/buscar-resultados-360.webp 360w, assets/img/capturas/buscar-resultados-540.webp 540w, assets/img/capturas/buscar-resultados-720.webp 720w" sizes="(max-width: 560px) 45vw, (max-width: 900px) 30vw, 345px" width="1080" height="2400" loading="lazy" alt="Resultados de la búsqueda «queen»: tarjeta del artista con los botones Aleatorio y Mix, canciones y otros artistas."></div>
+        <figcaption class="pie-figura"><b>Figura 4.</b> Búsqueda sin cuenta.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3 · Novedades -->
+  <section class="marco seccion" id="novedades" aria-labelledby="t-novedades">
+    <h2 class="titulo-sec" id="t-novedades"><span class="titulo-sec__num">3</span>Novedades de la versión 1.4.2</h2>
+    <p class="etiqueta" style="color:var(--c-suave);margin:0 0 var(--e-3)">Publicada el 25-11-2026 · notas oficiales de la versión</p>
+    <ul class="novedades">
+      <li><strong>Nuevo:</strong> la app te avisa cuando hay una versión nueva y la instala sola.</li>
+      <li><strong>Arreglo:</strong> las descargas ya no se quedan atascadas en algunos Wi-Fi.</li>
+      <li><strong>Arreglo:</strong> una descarga cortada ya no deja la canción dañada.</li>
+      <li>Pide permiso para mostrar notificaciones la primera vez.</li>
+    </ul>
+    <p><a class="enlace-flecha" href="https://github.com/Comunicaa2/ExtMusic/releases">Todas las versiones en GitHub</a></p>
+  </section>
+
+  <!-- 4 · Privacidad y especificaciones -->
+  <section class="marco seccion" id="privacidad" aria-labelledby="t-privacidad">
+    <h2 class="titulo-sec" id="t-privacidad"><span class="titulo-sec__num">4</span>Privacidad y especificaciones</h2>
+    <div class="tabla">
+      <table class="datos">
+        <caption>Tabla 2. Especificaciones generales</caption>
+        <thead><tr><th scope="col">Parámetro</th><th scope="col">Valor</th><th scope="col">Notas</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Versión</th><td>1.4.2</td><td class="nota">25-11-2026</td></tr>
+          <tr><th scope="row">Sistema</th><td>Android 8.0 (API 26) o superior</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Tamaño del APK</th><td>4,8 MB</td><td class="nota">ExtMusic-1.4.2.apk</td></tr>
+          <tr><th scope="row">Licencia</th><td>GPL-3.0-or-later</td><td class="nota">Software libre</td></tr>
+          <tr><th scope="row">Cuenta</th><td>No necesaria</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Anuncios</th><td>Ninguno</td><td class="nota">—</td></tr>
+          <tr><th scope="row">Analíticas</th><td>Ninguna</td><td class="nota">Sin librerías de analíticas ni de informes de errores</td></tr>
+          <tr><th scope="row">Tus datos</th><td>Solo en el teléfono</td><td class="nota">Copia de seguridad exportable (.extmusic)</td></tr>
+          <tr><th scope="row">SHA-256</th><td colspan="2"><span class="hash">5c964566b91704ef26e2dc6f13758f6bcfd305b616ddf89def17c4b8e78a213c</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="dos-col" style="margin-top:var(--e-6)">
+      <div class="tabla">
+        <table class="datos">
+          <caption>Tabla 3. Conexiones de red</caption>
+          <thead><tr><th scope="col">Servicio</th><th scope="col">Para qué</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><code>music.youtube.com</code></th><td>Catálogo, búsqueda y audio</td></tr>
+            <tr><th scope="row"><code>lrclib.net</code></th><td>Letras</td></tr>
+            <tr><th scope="row"><code>kugou</code></th><td>Letras de respaldo</td></tr>
+            <tr><th scope="row"><code>api.github.com</code></th><td>Buscar actualizaciones (solo la versión de GitHub)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabla">
+        <table class="datos">
+          <caption>Tabla 4. Permisos principales</caption>
+          <thead><tr><th scope="col">Permiso</th><th scope="col">Para qué</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><code>INTERNET</code></th><td>Escuchar, buscar y obtener letras</td></tr>
+            <tr><th scope="row"><code>READ_MEDIA_AUDIO</code></th><td>Leer la música del teléfono</td></tr>
+            <tr><th scope="row"><code>FOREGROUND_SERVICE</code></th><td>Seguir sonando en segundo plano</td></tr>
+            <tr><th scope="row"><code>POST_NOTIFICATIONS</code></th><td>Controles en la notificación</td></tr>
+            <tr><th scope="row"><code>REQUEST_INSTALL_PACKAGES</code></th><td>Instalar actualizaciones verificadas</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bloque ámbar de descarga -->
+<section class="bloque-descarga" id="descarga" aria-labelledby="t-descarga">
+  <div class="marco bloque-descarga__rejilla">
+    <div>
+      <h2 id="t-descarga">Descárgala de la fuente oficial.</h2>
+      <p>ExtMusic se publica solo en <a href="https://github.com/Comunicaa2/ExtMusic/releases">GitHub Releases</a>. La versión de GitHub te avisa de las nuevas y comprueba la huella y la firma antes de instalarlas.</p>
+      <a class="boton" href="https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic-1.4.2.apk">Descargar ExtMusic 1.4.2 <span class="boton__detalle">4,8 MB</span></a>
+    </div>
+    <div>
+      <p class="etiqueta" style="margin:0">Comprueba el archivo</p>
+      <pre class="codigo">sha256sum ExtMusic-1.4.2.apk
+5c964566b91704ef26e2dc6f13758f6b
+cfd305b616ddf89def17c4b8e78a213c</pre>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="marco pie">
+  <p class="etiqueta">Notas</p>
+  <p>ExtMusic es software libre bajo GPL-3.0-or-later. <a href="https://github.com/Comunicaa2/ExtMusic">Código fuente en GitHub</a>.</p>
+  <p>ExtMusic no está afiliada a YouTube ni a Google, ni cuenta con su aprobación. YouTube y YouTube Music son marcas de Google LLC.</p>
+  <p>Las portadas y fotos que aparecen en las capturas pertenecen a sus respectivos autores.</p>
+</footer>
+</div>
+</body>
+</html>

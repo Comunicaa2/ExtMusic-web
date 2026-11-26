@@ -1,0 +1,34 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ExtMusic">
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#33201A"/>
+      <stop offset="1" stop-color="#190E0B"/>
+    </linearGradient>
+    <!-- Su cabello: dorado/ámbar (ojos) -> caoba-rojo (puntas) -->
+    <linearGradient id="cabello" x1="100" y1="220" x2="412" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD75C"/>
+      <stop offset="0.45" stop-color="#FFA61E"/>
+      <stop offset="0.8" stop-color="#C75A2E"/>
+      <stop offset="1" stop-color="#8E3B2E"/>
+    </linearGradient>
+    <radialGradient id="brillo" cx="256" cy="262" r="205" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFA61E" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#FFA61E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#fondo)"/>
+  <circle cx="256" cy="262" r="205" fill="url(#brillo)"/>
+
+  <!-- OREJA sutil saliendo de la cresta izquierda (mismo ámbar, casi se funde con la onda) -->
+  <path d="M168 214 C 153 176 149 146 156 120 C 172 132 186 172 192 212 C 184 218 176 219 168 214 Z"
+        fill="url(#cabello)"/>
+  <!-- interior de la oreja, apenas insinuado -->
+  <path d="M168 200 C 160 174 159 152 163 134 C 172 146 180 174 183 200 C 177 204 173 204 168 200 Z"
+        fill="#8E3B2E" opacity="0.35"/>
+
+  <!-- ONDA limpia: pulso que se hincha en el centro y forma una "M" implícita -->
+  <path d="M104 262 C 140 262 145 208 178 208 C 213 208 220 326 256 326 C 292 326 299 208 334 208 C 367 208 372 262 408 262"
+        fill="none" stroke="url(#cabello)" stroke-width="44"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
