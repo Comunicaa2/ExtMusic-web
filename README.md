@@ -11,6 +11,7 @@ Es un sitio estático para GitHub Pages: HTML y CSS escritos a mano, sin depende
 index.html                  Página principal (español)
 versiones.html              Versión actual, instalación, comprobación y historial
 privacidad.html             Privacidad y seguridad (hechos comprobados en el código)
+documentacion.html          Documentación de uso, solución de problemas y FAQ (textos literales de la app)
 .nojekyll                   GitHub Pages sirve los archivos tal cual, sin Jekyll
 assets/css/extmusic.css     Sistema de diseño «Datasheet»: tokens + componentes, claro y oscuro automático
 assets/fonts/               Hanken Grotesk y JetBrains Mono (SIL OFL 1.1, subconjunto latino) + licencias

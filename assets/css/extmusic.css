@@ -256,6 +256,17 @@ h3,.h3{font:700 var(--t-h3)/1.25 var(--f-sans)}
   .datos--apilable td.nota--vacia{display:none}
 }
 
+/* Documentación: índice de la página, texto + figura y preguntas frecuentes */
+.toc{border:var(--b-fuerte);padding:14px 18px 8px;max-width:46em}
+.toc .etiqueta{margin:0 0 var(--e-2)}
+.toc ol{columns:2;column-gap:28px;margin:0;padding-left:1.6em;font-size:var(--t-nota)}
+.toc li{break-inside:avoid;margin-bottom:6px}
+.doc-col{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:var(--e-6);align-items:start}
+.faq dt{font-weight:700;margin-top:var(--e-4)}
+.faq dd{margin:4px 0 0;max-width:var(--medida);color:var(--c-suave)}
+@media (max-width:900px){.doc-col{grid-template-columns:1fr}.doc-col .figura{max-width:260px}}
+@media (max-width:560px){.toc ol{columns:1}}
+
 /* ---------- Movimiento reducido ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:0s!important;animation-duration:0s!important;scroll-behavior:auto!important}
