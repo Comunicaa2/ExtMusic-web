@@ -38,14 +38,22 @@ assets/img/capturas/        Capturas reales de la app en WebP (360, 540 y 720 px
 
 Abre `index.html` en el navegador. Como todas las rutas son relativas, se ve igual que publicado.
 
-## Publicar (pendiente de aprobación)
+## Publicar
 
-Se publicará desde la rama `main` con GitHub Pages (*Settings → Pages → Deploy from a branch → main / root*).
-Antes de publicar hay que revisar los cambios y comprobar la web ya desplegada.
+La web está publicada en <https://comunicaa2.github.io/ExtMusic-web/> desde la rama `main` con GitHub Pages (*Deploy from a branch → main / root*). Cada push a `main` la actualiza en uno o dos minutos.
+Antes de subir, revisa los cambios; después, comprueba la web ya desplegada.
 
 ## Al publicar una versión nueva de la app
 
-Actualiza en `index.html` y `versiones.html` (y en la cabecera de todas las páginas) la versión, la fecha, el tamaño del APK, la huella SHA-256, las URL de descarga y la lista de novedades.
+**La descarga se actualiza sola.** Todos los botones apuntan a `https://github.com/Comunicaa2/ExtMusic/releases/latest/download/ExtMusic.apk`, que GitHub redirige al APK de la última release. Para que funcione, la release debe tener **un único APK llamado exactamente `ExtMusic.apk`**. Si se llama de otra forma, los botones dan error 404.
+
+El resto de la web describe la versión 1.4.2 y lo dice (fecha y número), así que no queda falso. Actualizarlo es opcional, en español y en `en/`:
+
+- la cabecera de todas las páginas (`v1.4.2 · 25-11-2026`), incluida `404.html`;
+- en `index.html`: las Tablas 1 y 2, las novedades, `softwareVersion` en el JSON-LD y el pie de la Figura 1;
+- en `versiones.html`: la Tabla 1 y una entrada nueva en el historial, con su enlace exacto `releases/download/vX.Y.Z/ExtMusic.apk`;
+- el alcance en `privacidad.html` y el subtítulo de `documentacion.html`, si se revisan de nuevo.
+
 La huella se obtiene así:
 
 ```sh

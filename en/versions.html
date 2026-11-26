@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Versions and downloads · ExtMusic</title>
-<meta name="description" content="Download ExtMusic 1.4.2 for Android and browse the version history with official release notes, sizes and SHA-256 fingerprints to check each file.">
+<meta name="description" content="Download ExtMusic for Android and browse the version history with official release notes, sizes and SHA-256 fingerprints to check each file.">
 <link rel="canonical" href="https://comunicaa2.github.io/ExtMusic-web/en/versions.html">
 <link rel="alternate" hreflang="es" href="https://comunicaa2.github.io/ExtMusic-web/versiones.html">
 <link rel="alternate" hreflang="en" href="https://comunicaa2.github.io/ExtMusic-web/en/versions.html">
@@ -20,7 +20,7 @@
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:site_name" content="ExtMusic">
 <meta property="og:title" content="Versions and downloads · ExtMusic">
-<meta property="og:description" content="ExtMusic 1.4.2 for Android: official download, release notes and SHA-256 fingerprints.">
+<meta property="og:description" content="ExtMusic for Android: official download, release notes and SHA-256 fingerprints.">
 <meta property="og:url" content="https://comunicaa2.github.io/ExtMusic-web/en/versions.html">
 <meta property="og:image" content="https://comunicaa2.github.io/ExtMusic-web/assets/img/icono-512.png">
 <meta property="og:image:alt" content="ExtMusic icon: an amber wave on a dark brown background">
@@ -50,7 +50,7 @@
       <li><a href="versions.html" aria-current="page">Versions</a></li>
       <li><a href="privacy.html">Privacy</a></li>
       <li><a href="docs.html">Docs</a></li>
-      <li class="indice__descarga"><a href="#download">↓ Download v1.4.2</a></li>
+      <li class="indice__descarga"><a href="#download">↓ Download</a></li>
     </ol>
   </nav>
   <details class="marco menu">
@@ -62,7 +62,7 @@
         <li><a href="versions.html" aria-current="page">Versions</a></li>
         <li><a href="privacy.html">Privacy</a></li>
         <li><a href="docs.html">Docs</a></li>
-        <li><a href="#download">Download v1.4.2</a></li>
+        <li><a href="#download">Download</a></li>
       </ol>
     </nav>
   </details>
@@ -76,19 +76,20 @@
   </section>
 
   <section class="marco seccion" id="current" aria-labelledby="t-current">
-    <h2 class="titulo-sec" id="t-current"><span class="titulo-sec__num">1</span>Current version</h2>
+    <h2 class="titulo-sec" id="t-current"><span class="titulo-sec__num">1</span>Latest version</h2>
+    <p>The <a href="#download">Download</a> button always gives you the latest version published on GitHub. Its release notes and SHA-256 fingerprint are on the <a href="https://github.com/Comunicaa2/ExtMusic/releases/latest">latest release page</a>.</p>
     <div class="tabla">
       <table class="datos">
-        <caption>Table 1. ExtMusic 1.4.2</caption>
+        <caption>Table 1. ExtMusic 1.4.2, the latest when this website was reviewed (2026-11-25)</caption>
         <thead><tr><th scope="col">Parameter</th><th scope="col">Value</th></tr></thead>
         <tbody>
           <tr><th scope="row">Version</th><td>1.4.2</td></tr>
           <tr><th scope="row">Released</th><td>2026-11-25</td></tr>
-          <tr><th scope="row">File</th><td><code>ExtMusic-1.4.2.apk</code></td></tr>
+          <tr><th scope="row">File</th><td><code>ExtMusic.apk</code></td></tr>
           <tr><th scope="row">Size</th><td>4.8 MB <span class="nota">(4,768,455 bytes)</span></td></tr>
           <tr><th scope="row">Requirements</th><td>Android 8.0 (API 26) or later</td></tr>
           <tr><th scope="row">SHA-256</th><td><span class="hash">5c964566b91704ef26e2dc6f13758f6bcfd305b616ddf89def17c4b8e78a213c</span></td></tr>
-          <tr><th scope="row">Links</th><td><a href="https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic-1.4.2.apk">Download the APK</a> · <a href="https://github.com/Comunicaa2/ExtMusic/releases/tag/v1.4.2">Release page on GitHub</a></td></tr>
+          <tr><th scope="row">Links</th><td><a href="https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic.apk">Download the 1.4.2 APK</a> · <a href="https://github.com/Comunicaa2/ExtMusic/releases/tag/v1.4.2">Release page on GitHub</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -97,7 +98,7 @@
   <section class="marco seccion" id="install" aria-labelledby="t-install">
     <h2 class="titulo-sec" id="t-install"><span class="titulo-sec__num">2</span>Install</h2>
     <ol class="pasos">
-      <li><div>On your phone, download <strong>ExtMusic-1.4.2.apk</strong> from GitHub.</div></li>
+      <li><div>On your phone, download <strong>ExtMusic.apk</strong> from GitHub.</div></li>
       <li><div>Open it. The first time, Android will ask you to allow your browser (or file manager) to install apps: turn it on and go back.</div></li>
       <li><div>Tap <strong>Install</strong>. You need Android 8.0 or later.</div></li>
     </ol>
@@ -109,22 +110,23 @@
     <h2 class="titulo-sec" id="t-verify"><span class="titulo-sec__num">3</span>Check the file</h2>
     <p>This is optional. It makes sure the APK is exactly the published one and that it is signed with the ExtMusic key.</p>
     <ol class="pasos">
-      <li><div><strong>File fingerprint.</strong> Compute it and compare it with the SHA-256 in Table 1 (or the one for its version in the history):<pre class="codigo">sha256sum ExtMusic-1.4.2.apk</pre></div></li>
-      <li><div><strong>Signature.</strong> With <code>apksigner</code> (included in the Android SDK build tools):<pre class="codigo">apksigner verify --print-certs ExtMusic-1.4.2.apk</pre>The certificate's SHA-256 fingerprint must be:<br><span class="hash">7492411a3df91a2128010740826791eed78f15deba2a962bea2ca6e9e2a3e2a7</span></div></li>
+      <li><div><strong>File fingerprint.</strong> Compute it and compare it with the SHA-256 on <a href="https://github.com/Comunicaa2/ExtMusic/releases/latest">its release page on GitHub</a> (or the one in the history):<pre class="codigo">sha256sum ExtMusic.apk</pre></div></li>
+      <li><div><strong>Signature.</strong> With <code>apksigner</code> (included in the Android SDK build tools):<pre class="codigo">apksigner verify --print-certs ExtMusic.apk</pre>The certificate's SHA-256 fingerprint must be:<br><span class="hash">7492411a3df91a2128010740826791eed78f15deba2a962bea2ca6e9e2a3e2a7</span></div></li>
     </ol>
   </section>
 
   <section class="marco seccion" id="history" aria-labelledby="t-history">
     <h2 class="titulo-sec" id="t-history"><span class="titulo-sec__num">4</span>Version history</h2>
+    <p>Up to 1.4.2 (2026-11-25). Later versions are on <a href="https://github.com/Comunicaa2/ExtMusic/releases">GitHub Releases</a>.</p>
     <article class="version" id="v1-4-2" aria-labelledby="t-142">
-      <h3 id="t-142">1.4.2 · 2026-11-25 <span class="etiqueta version__actual">Current</span></h3>
+      <h3 id="t-142">1.4.2 · 2026-11-25</h3>
       <ul class="novedades">
         <li>New: the app tells you when there's a new version and installs it for you</li>
         <li>Fix: downloads no longer get stuck on some Wi-Fi networks</li>
         <li>Fix: a cut-off download no longer leaves a broken song</li>
         <li>Asks permission to show notifications the first time</li>
       </ul>
-      <p class="hechos"><a href="https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic-1.4.2.apk">ExtMusic-1.4.2.apk</a> · 4,768,455 bytes · SHA-256 <span class="hash">5c964566b91704ef26e2dc6f13758f6bcfd305b616ddf89def17c4b8e78a213c</span></p>
+      <p class="hechos"><a href="https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic.apk">ExtMusic.apk</a> · 4,768,455 bytes · SHA-256 <span class="hash">5c964566b91704ef26e2dc6f13758f6bcfd305b616ddf89def17c4b8e78a213c</span></p>
     </article>
 
     <article class="version" id="v1-4-1" aria-labelledby="t-141">
@@ -172,12 +174,12 @@
       <div>
         <h2 id="t-download">Get it from the official source.</h2>
         <p>ExtMusic is published only on <a href="https://github.com/Comunicaa2/ExtMusic/releases">GitHub Releases</a>. The GitHub version tells you about new versions and checks the fingerprint and the signature before installing them.</p>
-        <a class="boton" href="https://github.com/Comunicaa2/ExtMusic/releases/download/v1.4.2/ExtMusic-1.4.2.apk">Download ExtMusic 1.4.2 <span class="boton__detalle">4.8 MB</span></a>
+        <a class="boton" href="https://github.com/Comunicaa2/ExtMusic/releases/latest/download/ExtMusic.apk">Download ExtMusic <span class="boton__detalle">Latest version</span></a>
       </div>
       <div>
         <p class="etiqueta m-0">Check the file</p>
-        <pre class="codigo">sha256sum ExtMusic-1.4.2.apk
-5c964566b91704ef26e2dc6f13758f6bcfd305b616ddf89def17c4b8e78a213c</pre>
+        <pre class="codigo">sha256sum ExtMusic.apk</pre>
+        <p class="mt-4">Compare it with the fingerprint on the <a href="https://github.com/Comunicaa2/ExtMusic/releases/latest">latest release page</a> on GitHub.</p>
       </div>
     </div>
   </section>
