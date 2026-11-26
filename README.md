@@ -3,7 +3,7 @@
 Sitio web de [ExtMusic](https://github.com/Comunicaa2/ExtMusic), un reproductor de música libre para Android.
 Es un sitio estático para GitHub Pages: HTML y CSS escritos a mano, sin dependencias y sin paso de construcción.
 
-> Estado: **prototipo de la página principal** (Fase 4). Todavía no está publicado.
+> Estado: **publicado** en <https://comunicaa2.github.io/ExtMusic-web/>.
 
 ## Estructura
 
@@ -20,6 +20,8 @@ assets/css/extmusic.css     Sistema de diseño «Datasheet»: tokens + component
 assets/fonts/               Hanken Grotesk y JetBrains Mono (SIL OFL 1.1, subconjunto latino) + licencias
 assets/img/icono.svg        Icono de la app; icono-32/192/512.png y apple-touch-icon.png derivados de él
 assets/img/capturas/        Capturas reales de la app en WebP (360, 540 y 720 px de ancho)
+herramientas/actualizar_version.py   Regenera los datos de versión desde la última release (ver abajo)
+.github/workflows/actualizar-version.yml   Lo ejecuta automáticamente al publicarse una release
 ```
 
 ## Reglas
@@ -43,22 +45,37 @@ Abre `index.html` en el navegador. Como todas las rutas son relativas, se ve igu
 La web está publicada en <https://comunicaa2.github.io/ExtMusic-web/> desde la rama `main` con GitHub Pages (*Deploy from a branch → main / root*). Cada push a `main` la actualiza en uno o dos minutos.
 Antes de subir, revisa los cambios; después, comprueba la web ya desplegada.
 
-## Al publicar una versión nueva de la app
+## Al publicar una versión nueva de la app (automático)
 
-**La descarga se actualiza sola.** Todos los botones apuntan a `https://github.com/Comunicaa2/ExtMusic/releases/latest/download/ExtMusic.apk`, que GitHub redirige al APK de la última release. Para que funcione, la release debe tener **un único APK llamado exactamente `ExtMusic.apk`**. Si se llama de otra forma, los botones dan error 404.
+**No hay que hacer nada a mano.** Al publicar una release en `Comunicaa2/ExtMusic`:
 
-El resto de la web describe la versión 1.4.2 y lo dice (fecha y número), así que no queda falso. Actualizarlo es opcional, en español y en `en/`:
+1. El workflow `avisar-web.yml` del repo de la app avisa a este repo (`repository_dispatch` «nueva-version») con el secreto `WEB_DISPATCH_TOKEN`.
+2. El workflow `actualizar-version.yml` de este repo ejecuta `herramientas/actualizar_version.py`. Si hay cambios, hace un commit como `github-actions[bot]` y GitHub Pages publica la web en uno o dos minutos.
 
-- la cabecera de todas las páginas (`v1.4.2 · 25-11-2026`), incluida `404.html`;
-- en `index.html`: las Tablas 1 y 2, las novedades, `softwareVersion` en el JSON-LD y el pie de la Figura 1;
-- en `versiones.html`: la Tabla 1 y una entrada nueva en el historial, con su enlace exacto `releases/download/vX.Y.Z/ExtMusic.apk`;
-- el alcance en `privacidad.html` y el subtítulo de `documentacion.html`, si se revisan de nuevo.
+**Regla:** la release debe tener **un único APK llamado exactamente `ExtMusic.apk`**. Si no, el workflow falla sin tocar la web y GitHub avisa por correo. Si el APK aún se está subiendo, el workflow reintenta durante 3 minutos.
 
-La huella se obtiene así:
+**Qué se regenera.** Solo lo que está entre `<!-- auto:nombre -->` y `<!-- /auto:nombre -->`, en español y en `en/`:
 
-```sh
-gh api repos/Comunicaa2/ExtMusic/releases/latest --jq '.assets[] | .name + " " + .digest'
-```
+- la cabecera de todas las páginas, incluida la 404;
+- en Versiones, la Tabla 1 y una entrada nueva en el historial;
+- en la portada, las novedades y las filas de versión, tamaño y SHA-256 de la Tabla 2;
+- `softwareVersion` y `fileSize` del JSON-LD, y los `lastmod` del sitemap.
+
+**De dónde salen los datos:**
+
+- Notas en español: el texto de la release.
+- Notas en inglés: `fastlane/metadata/android/en-US/changelogs/<versionCode>.txt` de esa etiqueta. Si no existe, se muestran las de español con el aviso «Release notes available in Spanish only».
+
+**Qué NO se regenera.** La tabla de Funciones, la Documentación, la revisión de Privacidad, las capturas y el pie de la Figura 1 siguen diciendo «revisado en la versión 1.4.2». Se escribieron comprobando la app y hay que revisarlos a mano cuando una versión cambie algo de eso.
+
+**Ejecutarlo a mano:**
+
+- desde GitHub: pestaña *Actions* → «Actualizar versión» → *Run workflow*;
+- en local: `python3 herramientas/actualizar_version.py`.
+
+Para probar sin red: `--release-json release.json --changelog-en notas.txt --raiz copia/`.
+
+**Si el aviso deja de funcionar** (por ejemplo, porque caducó el token): crea otro token *fine-grained* con acceso solo a `ExtMusic-web` y permiso *Contents: Read and write*, y guárdalo con `gh secret set WEB_DISPATCH_TOKEN -R Comunicaa2/ExtMusic`. Mientras tanto, la web se puede actualizar a mano con *Run workflow*.
 
 ## Licencias
 

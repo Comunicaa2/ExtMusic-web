@@ -1,0 +1,45 @@
+# Regenera la web con los datos de la última release de ExtMusic.
+# Lo dispara el repo de la app al publicar una release (repository_dispatch «nueva-version»),
+# o a mano desde la pestaña Actions (workflow_dispatch).
+name: Actualizar versión
+
+on:
+  repository_dispatch:
+    types: [nueva-version]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: actualizar-version
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Regenerar con la última release
+        id: gen
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        # Si la release aún no tiene el APK (subida en curso), reintenta 6 veces cada 30 s.
+        run: python3 herramientas/actualizar_version.py --reintentos 6 --espera 30
+
+      - name: Commit, push y build de Pages
+        if: steps.gen.outputs.cambios == 'si'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.gen.outputs.version }}
+        run: |
+          git add -A
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Web: ExtMusic ${VERSION}"
+          git push
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" --silent \
+            || echo "::warning::No se pudo pedir el build de Pages; se hará con el push."
