@@ -21,7 +21,6 @@ assets/fonts/               Hanken Grotesk y JetBrains Mono (SIL OFL 1.1, subcon
 assets/img/icono.svg        Icono de la app; icono-32/192/512.png y apple-touch-icon.png derivados de él
 assets/img/capturas/        Capturas reales de la app en WebP (360, 540 y 720 px de ancho)
 herramientas/actualizar_version.py   Regenera los datos de versión desde la última release (ver abajo)
-.github/workflows/actualizar-version.yml   Lo ejecutaba al publicarse una release (desactivado, ver abajo)
 ```
 
 ## Reglas
@@ -47,7 +46,7 @@ Antes de subir, revisa los cambios; después, comprueba la web ya desplegada.
 
 ## Al publicar una versión nueva de la app (a mano)
 
-**La actualización automática está desactivada** (desde el 26-11-2026). El workflow «Actualizar versión» de este repo está deshabilitado en GitHub, así que publicar una release en `Comunicaa2/ExtMusic` no cambia la web, y tampoco se puede lanzar con *Run workflow*. El workflow `avisar-web.yml` del repo de la app sigue activo.
+**La web se actualiza solo a mano.** El workflow «Actualizar versión» se eliminó de este repo el 26-11-2026, así que publicar una release en `Comunicaa2/ExtMusic` no cambia la web. El workflow `avisar-web.yml` del repo de la app sigue activo, pero aquí ya no hay ningún workflow que reciba su aviso.
 
 **Para actualizar la web:**
 
@@ -73,7 +72,7 @@ Antes de subir, revisa los cambios; después, comprueba la web ya desplegada.
 
 Para probar sin red: `--release-json release.json --changelog-en notas.txt --raiz copia/`.
 
-**Para reactivar la actualización automática:** `gh workflow enable actualizar-version.yml -R Comunicaa2/ExtMusic-web`. El aviso usa el secreto `WEB_DISPATCH_TOKEN` del repo de la app. Si el token ha caducado, crea otro *fine-grained* con acceso solo a `ExtMusic-web` y permiso *Contents: Read and write*, y guárdalo con `gh secret set WEB_DISPATCH_TOKEN -R Comunicaa2/ExtMusic`.
+**Para recuperar el workflow eliminado:** `git checkout 23f76a8 -- .github/workflows/actualizar-version.yml`, y después commit y push.
 
 ## Licencias
 
