@@ -46,7 +46,7 @@ Antes de subir, revisa los cambios; después, comprueba la web ya desplegada.
 
 ## Al publicar una versión nueva de la app (a mano)
 
-**La web se actualiza solo a mano.** El workflow «Actualizar versión» se eliminó de este repo el 26-11-2026, así que publicar una release en `Comunicaa2/ExtMusic` no cambia la web. El workflow `avisar-web.yml` del repo de la app sigue activo, pero aquí ya no hay ningún workflow que reciba su aviso.
+**La web se actualiza solo a mano.** El workflow «Actualizar versión» se eliminó de este repo el 26-11-2026, así que publicar una release en `Comunicaa2/ExtMusic` no cambia la web. El mismo día se eliminaron también el aviso del repo de la app (`avisar-web.yml`) y su secreto.
 
 **Para actualizar la web:**
 
