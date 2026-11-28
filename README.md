@@ -19,7 +19,7 @@ sitemap.xml, robots.txt     Para buscadores: las 8 páginas con sus alternativas
 assets/css/extmusic.css     Sistema de diseño «Datasheet»: tokens + componentes, claro y oscuro automático
 assets/fonts/               Hanken Grotesk y JetBrains Mono (SIL OFL 1.1, subconjunto latino) + licencias
 assets/img/icono.svg        Icono de la app; icono-32/192/512.png y apple-touch-icon.png derivados de él
-assets/img/capturas/        Capturas reales de la app en WebP (360, 540 y 720 px de ancho)
+assets/img/capturas/        Capturas reales de la app en WebP (360, 540 y 720 px de ancho; la del reproductor, también 460)
 herramientas/actualizar_version.py   Regenera los datos de versión desde la última release (ver abajo)
 ```
 
@@ -32,7 +32,7 @@ herramientas/actualizar_version.py   Regenera los datos de versión desde la úl
 - **JavaScript mínimo y opcional.** Solo hay un script en línea (una línea) que cierra el menú móvil al elegir una sección; sin JavaScript todo funciona igual.
 - **Cabecera, menú, script y pie son iguales en todas las páginas** (copiados a mano, sin paso de construcción). Si cambias uno, cambia todos; en cada página solo varía qué enlace lleva `aria-current="page"`.
 - **Capturas reales y sin editar.** Se generan desde los PNG originales con ImageMagick:
-  `magick captura.png -resize 720x -quality 82 -define webp:method=6 nombre-720.webp` (y lo mismo a 540 y 360).
+  `magick captura.png -resize 720x -quality 82 -define webp:method=6 nombre-720.webp` (y lo mismo a 540 y 360; la captura principal, `reproductor`, tiene además una de 460 para móviles).
 - **Solo datos verificables** (versión, tamaño, huella SHA-256, permisos…), sacados del repositorio de la app y de sus releases.
 
 ## Previsualizar

@@ -42,7 +42,7 @@
   "image": "https://comunicaa2.github.io/ExtMusic-web/assets/img/icono-512.png",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Android 8.0 o superior",
-  "softwareVersion": "1.4.2",
+  "softwareVersion": "1.4.3",
   "fileSize": "4.8MB",
   "downloadUrl": "https://github.com/Comunicaa2/ExtMusic/releases/latest/download/ExtMusic.apk",
   "license": "https://www.gnu.org/licenses/gpl-3.0.html",
@@ -60,7 +60,7 @@
   <div class="marco doc">
     <a class="marca" href="index.html" aria-label="ExtMusic, inicio"><img src="assets/img/icono.svg" alt="" width="28" height="28">ExtMusic</a>
     <span class="doc__tipo">Reproductor de música para Android</span>
-    <span class="doc__rev"><!-- auto:rev -->v1.4.2 · 25-11-2026<!-- /auto:rev --></span>
+    <span class="doc__rev"><!-- auto:rev -->v1.4.3 · 28-11-2026<!-- /auto:rev --></span>
     <div class="idioma" role="group" aria-label="Idioma">
       <a href="index.html" aria-current="true" lang="es">ES</a>
       <span aria-hidden="true">/</span>
@@ -113,7 +113,7 @@
         <div class="anotada">
           <div class="lamina">
             <img src="assets/img/capturas/reproductor-540.webp"
-                 srcset="assets/img/capturas/reproductor-360.webp 360w, assets/img/capturas/reproductor-540.webp 540w, assets/img/capturas/reproductor-720.webp 720w"
+                 srcset="assets/img/capturas/reproductor-360.webp 360w, assets/img/capturas/reproductor-460.webp 460w, assets/img/capturas/reproductor-540.webp 540w, assets/img/capturas/reproductor-720.webp 720w"
                  sizes="(max-width: 560px) 260px, (max-width: 900px) 240px, 300px"
                  width="1080" height="2400" fetchpriority="high"
                  alt="Reproductor de ExtMusic reproduciendo «Don't Stop Me Now» de Queen, con seis puntos numerados que señalan sus partes.">
@@ -148,7 +148,7 @@
     <h2 class="titulo-sec" id="t-funciones"><span class="titulo-sec__num">2</span>Funciones</h2>
     <div class="tabla">
       <table class="datos datos--apilable">
-        <caption>Tabla 1. Funciones, revisadas en la versión 1.4.2</caption>
+        <caption>Tabla 1. Funciones, revisadas en la versión 1.4.3</caption>
         <thead><tr><th scope="col">Función</th><th scope="col">Descripción</th><th scope="col">Requisito</th></tr></thead>
         <tbody>
           <tr><th scope="row">Búsqueda</th><td>Canciones, artistas y álbumes de YouTube Music, con filtros. Sin iniciar sesión.</td><td class="nota">Conexión a internet</td></tr>
@@ -157,7 +157,7 @@
           <tr><th scope="row">Reproducción</th><td>Cola editable (arrastrar para reordenar) y temporizador de sueño.</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Inicio</th><td>Selección rápida, escuchar de nuevo y mixes de tus artistas. Opción «No recomendar».</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Letras</th><td>Sincronizadas desde LRCLIB, con KuGou de respaldo, y archivos <code>.lrc</code> locales. Se pueden guardar para verlas sin conexión.</td><td class="nota nota--vacia">—</td></tr>
-          <tr><th scope="row">Descargas</th><td>Guarda canciones para escucharlas sin conexión, con la opción de descargar solo con Wi-Fi.</td><td class="nota nota--vacia">—</td></tr>
+          <tr><th scope="row">Descargas</th><td>Guarda canciones para escucharlas sin conexión, con la opción de descargar solo con Wi-Fi. Si una descarga falla, se puede reintentar desde el menú ⋮.</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Música local</th><td>Reproduce la música del teléfono, con filtro por carpeta.</td><td class="nota">Permiso de audio</td></tr>
           <tr><th scope="row">Normalización</th><td>Sube las canciones flojas y suaviza los picos de volumen.</td><td class="nota">Android 9+</td></tr>
           <tr><th scope="row">Apariencia</th><td>Temas claro, oscuro y AMOLED; fondo con el color de la portada; vidrio líquido.</td><td class="nota">Refracción: Android 13+</td></tr>
@@ -185,13 +185,17 @@
   <!-- 3 · Novedades -->
   <section class="marco seccion" id="novedades" aria-labelledby="t-novedades">
     <!-- auto:novedades -->
-    <h2 class="titulo-sec" id="t-novedades"><span class="titulo-sec__num">3</span>Novedades de la versión 1.4.2</h2>
-    <p class="etiqueta etiqueta--suave">Publicada el 25-11-2026 · notas oficiales de la versión</p>
+    <h2 class="titulo-sec" id="t-novedades"><span class="titulo-sec__num">3</span>Novedades de la versión 1.4.3</h2>
+    <p class="etiqueta etiqueta--suave">Publicada el 28-11-2026 · notas oficiales de la versión</p>
     <ul class="novedades">
-      <li><strong>Nuevo:</strong> la app te avisa cuando hay una versión nueva y la instala sola.</li>
-      <li><strong>Arreglo:</strong> las descargas ya no se quedan atascadas en algunos Wi-Fi.</li>
-      <li><strong>Arreglo:</strong> una descarga cortada ya no deja la canción dañada.</li>
-      <li>Pide permiso para mostrar notificaciones la primera vez.</li>
+      <li><strong>Nuevo:</strong> si una descarga falla, te avisa y puedes reintentarla desde el menú ⋮.</li>
+      <li>Te avisa cuando falta espacio, también al actualizar la app.</li>
+      <li>Exportar un backup ya no puede borrar el anterior.</li>
+      <li>Los backups muy grandes ya se pueden restaurar.</li>
+      <li><strong>Arreglo:</strong> el Inicio ya no se cierra.</li>
+      <li><strong>Arreglo:</strong> los perfiles ya no mezclan sus recomendaciones.</li>
+      <li>«Añadir a playlist» muestra todas tus listas.</li>
+      <li>Más seguridad: otras apps ya no pueden meter canciones en tu cola.</li>
     </ul>
     <!-- /auto:novedades -->
     <p class="desc texto-nota"><strong>Cómo funciona la actualización:</strong> la app descarga la versión nueva desde GitHub, comprueba su huella SHA-256 y su firma, y abre el instalador de Android para que tú confirmes. Solo en la versión descargada de GitHub.</p>
@@ -206,7 +210,7 @@
         <caption>Tabla 2. Especificaciones generales</caption>
         <thead><tr><th scope="col">Parámetro</th><th scope="col">Valor</th><th scope="col">Notas</th></tr></thead>
         <tbody>
-          <!-- auto:t2-version --><tr><th scope="row">Versión</th><td>1.4.2</td><td class="nota">25-11-2026</td></tr><!-- /auto:t2-version -->
+          <!-- auto:t2-version --><tr><th scope="row">Versión</th><td>1.4.3</td><td class="nota">28-11-2026</td></tr><!-- /auto:t2-version -->
           <tr><th scope="row">Sistema</th><td>Android 8.0 (API 26) o superior</td><td class="nota nota--vacia">—</td></tr>
           <!-- auto:t2-tamano --><tr><th scope="row">Tamaño del APK</th><td>4,8 MB</td><td class="nota">ExtMusic.apk</td></tr><!-- /auto:t2-tamano -->
           <tr><th scope="row">Licencia</th><td>GPL-3.0-or-later</td><td class="nota">Software libre</td></tr>
@@ -214,7 +218,7 @@
           <tr><th scope="row">Anuncios</th><td>Ninguno</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Analíticas</th><td>Ninguna</td><td class="nota">Sin librerías de analíticas ni de informes de errores</td></tr>
           <tr><th scope="row">Tus datos</th><td>Solo en el teléfono</td><td class="nota">Copia de seguridad exportable (.extmusic)</td></tr>
-          <!-- auto:t2-sha --><tr><th scope="row">SHA-256</th><td colspan="2"><span class="hash">5c964566b91704ef26e2dc6f13758f6bcfd305b616ddf89def17c4b8e78a213c</span></td></tr><!-- /auto:t2-sha -->
+          <!-- auto:t2-sha --><tr><th scope="row">SHA-256</th><td colspan="2"><span class="hash">c479d5b8d1ac938b93aee92f4cc134411b57d27bed7e6fbe4d0868ff6d2f2085</span></td></tr><!-- /auto:t2-sha -->
         </tbody>
       </table>
     </div>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacidad y seguridad · ExtMusic</title>
-<meta name="description" content="Qué datos guarda ExtMusic y dónde, a qué servicios se conecta, qué permisos pide y cómo verifica sus actualizaciones. Hechos comprobados en el código de la versión 1.4.2.">
+<meta name="description" content="Qué datos guarda ExtMusic y dónde, a qué servicios se conecta, qué permisos pide y cómo verifica sus actualizaciones. Hechos comprobados en el código de la app, revisado hasta la versión 1.4.3.">
 <link rel="canonical" href="https://comunicaa2.github.io/ExtMusic-web/privacidad.html">
 <link rel="alternate" hreflang="es" href="https://comunicaa2.github.io/ExtMusic-web/privacidad.html">
 <link rel="alternate" hreflang="en" href="https://comunicaa2.github.io/ExtMusic-web/en/privacy.html">
@@ -35,7 +35,7 @@
   <div class="marco doc">
     <a class="marca" href="index.html" aria-label="ExtMusic, inicio"><img src="assets/img/icono.svg" alt="" width="28" height="28">ExtMusic</a>
     <span class="doc__tipo">Reproductor de música para Android</span>
-    <span class="doc__rev"><!-- auto:rev -->v1.4.2 · 25-11-2026<!-- /auto:rev --></span>
+    <span class="doc__rev"><!-- auto:rev -->v1.4.3 · 28-11-2026<!-- /auto:rev --></span>
     <div class="idioma" role="group" aria-label="Idioma">
       <a href="privacidad.html" aria-current="true" lang="es">ES</a>
       <span aria-hidden="true">/</span>
@@ -71,7 +71,7 @@
   <section class="marco seccion" aria-labelledby="t-pagina">
     <h1 class="titular" id="t-pagina">Privacidad y seguridad</h1>
     <p class="subtitulo">Qué guarda ExtMusic, con quién se conecta y cómo se protege. <span class="marcador">Solo hechos comprobados</span> en el código.</p>
-    <div class="aviso"><p><strong>Alcance:</strong> esta página resume una revisión del código de la versión 1.4.2 hecha para esta web el 25-11-2026. No es una auditoría de seguridad independiente.</p></div>
+    <div class="aviso"><p><strong>Alcance:</strong> esta página resume una revisión del código de la versión 1.4.2 hecha para esta web el 25-11-2026, y una revisión de los cambios de la versión 1.4.3 hecha el 28-11-2026. No es una auditoría de seguridad independiente.</p></div>
   </section>
 
   <section class="marco seccion" id="resumen" aria-labelledby="t-resumen">
@@ -100,8 +100,8 @@
         <tbody>
           <tr><th scope="row">Me gusta, playlists, historial y recomendaciones</th><td>En la base de datos interna de la app, separados por <strong>perfiles de gusto</strong>.</td><td class="nota">Al borrar un perfil se borran su historial, sus Me gusta y sus playlists («Las descargas no se tocan»). Los datos internos se borran al desinstalar la app.</td></tr>
           <tr><th scope="row">Audio temporal y portadas</th><td>Caché interna, con un máximo que eliges en Ajustes. Si al teléfono le queda poco espacio, baja a 32 MB.</td><td class="nota">Ajustes → «Liberar espacio» («Descargas, Me gusta y playlists no se tocan»).</td></tr>
-          <tr><th scope="row">Canciones descargadas</th><td>En el almacenamiento de la propia app.</td><td class="nota">Con «Eliminar descarga» en la app, o borrando los archivos.</td></tr>
-          <tr><th scope="row">Copia de seguridad</th><td>Un archivo <code>.extmusic</code> con me gusta, playlists, historial, cola y ajustes, <strong>solo cuando tú la exportas</strong> y donde la guardes.</td><td class="nota">Borrando el archivo. Cómo hacerla: <a href="documentacion.html#copias">Docs → Copias de seguridad</a>.</td></tr>
+          <tr><th scope="row">Canciones descargadas</th><td>En el almacenamiento de la propia app. Si una descarga falla, la app anota la canción, el motivo y la hora para ofrecerte reintentarla, hasta que vuelvas a pedirla o se complete.</td><td class="nota">Con «Eliminar descarga» en la app, o borrando los archivos.</td></tr>
+          <tr><th scope="row">Copia de seguridad</th><td>Un archivo <code>.extmusic</code> con me gusta, playlists, historial, cola y ajustes, <strong>solo cuando tú la exportas</strong> y donde la guardes. En bibliotecas que superan el tamaño máximo se dejan fuera canciones sin uso y puede recortarse la cola. Al exportar se crea un archivo temporal en la caché, que se borra al terminar; si la app se cierra antes, se borra en la siguiente exportación.</td><td class="nota">Borrando el archivo. Cómo hacerla: <a href="documentacion.html#copias">Docs → Copias de seguridad</a>.</td></tr>
           <tr><th scope="row">Copia automática de Android</th><td><strong>Desactivada</strong> (<code>allowBackup="false"</code>): los datos de ExtMusic no se suben a la copia de seguridad de Google.</td><td class="nota nota--vacia">—</td></tr>
         </tbody>
       </table>
@@ -131,7 +131,7 @@
     <h2 class="titulo-sec" id="t-permisos"><span class="titulo-sec__num">4</span>Permisos</h2>
     <div class="tabla">
       <table class="datos">
-        <caption>Tabla 4. Permisos declarados en la app (versión 1.4.2)</caption>
+        <caption>Tabla 4. Permisos declarados en la app (versión 1.4.3)</caption>
         <thead><tr><th scope="col">Permiso</th><th scope="col">Para qué</th></tr></thead>
         <tbody>
           <tr><th scope="row"><code>INTERNET</code></th><td>Escuchar, buscar, obtener letras y buscar actualizaciones.</td></tr>
@@ -156,6 +156,7 @@
       <li><strong>Solo HTTPS.</strong> El tráfico sin cifrar está bloqueado (<code>cleartextTrafficPermitted="false"</code>).</li>
       <li><strong>Solo certificados del sistema.</strong> La versión publicada no confía en certificados instalados por el usuario, lo que dificulta interceptar su tráfico. Las versiones de desarrollo sí los aceptan, para depurar.</li>
       <li><strong>Dependencias corregidas.</strong> La app fuerza versiones corregidas de dos librerías que llegan de forma indirecta (jsoup y Guava) por avisos de seguridad publicados.</li>
+      <li><strong>Acceso de otras apps a la reproducción.</strong> Desde la 1.4.3, la app rechaza la conexión de apps ajenas a su sesión de reproducción. El sistema y las apps que Android considera de confianza (con control multimedia o acceso a las notificaciones) pueden controlar la reproducción y ver la cola, pero no añadir ni cambiar canciones. En Android 8.x, que no identifica quién envía las órdenes de la sesión del sistema, esas órdenes se tratan como de confianza.</li>
       <li><strong>Código abierto.</strong> Todo el código está en <a href="https://github.com/Comunicaa2/ExtMusic">GitHub</a> bajo GPL-3.0-or-later; cualquiera puede revisarlo.</li>
     </ul>
   </section>

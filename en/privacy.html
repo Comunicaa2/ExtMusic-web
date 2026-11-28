@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy and security · ExtMusic</title>
-<meta name="description" content="What data ExtMusic stores and where, which services it connects to, which permissions it requests and how it verifies its updates. Facts checked in the code of version 1.4.2.">
+<meta name="description" content="What data ExtMusic stores and where, which services it connects to, which permissions it requests and how it verifies its updates. Facts checked in the app's code, reviewed up to version 1.4.3.">
 <link rel="canonical" href="https://comunicaa2.github.io/ExtMusic-web/en/privacy.html">
 <link rel="alternate" hreflang="es" href="https://comunicaa2.github.io/ExtMusic-web/privacidad.html">
 <link rel="alternate" hreflang="en" href="https://comunicaa2.github.io/ExtMusic-web/en/privacy.html">
@@ -36,7 +36,7 @@
   <div class="marco doc">
     <a class="marca" href="index.html" aria-label="ExtMusic, home"><img src="../assets/img/icono.svg" alt="" width="28" height="28">ExtMusic</a>
     <span class="doc__tipo">Music player for Android</span>
-    <span class="doc__rev"><!-- auto:rev -->v1.4.2 · 2026-11-25<!-- /auto:rev --></span>
+    <span class="doc__rev"><!-- auto:rev -->v1.4.3 · 2026-11-28<!-- /auto:rev --></span>
     <div class="idioma" role="group" aria-label="Language">
       <a href="../privacidad.html" lang="es" hreflang="es">ES<span class="visualmente-oculto"> (Español)</span></a>
       <span aria-hidden="true">/</span>
@@ -72,7 +72,7 @@
   <section class="marco seccion" aria-labelledby="t-page">
     <h1 class="titular" id="t-page">Privacy and security</h1>
     <p class="subtitulo">What ExtMusic stores, who it connects to and how it protects itself. <span class="marcador">Only facts checked</span> in the code.</p>
-    <div class="aviso"><p><strong>Scope:</strong> this page summarizes a review of the code of version 1.4.2, done for this website on 2026-11-25. It is not an independent security audit.</p></div>
+    <div class="aviso"><p><strong>Scope:</strong> this page summarizes a review of the code of version 1.4.2, done for this website on 2026-11-25, and a review of the changes in version 1.4.3, done on 2026-11-28. It is not an independent security audit.</p></div>
   </section>
 
   <section class="marco seccion" id="summary" aria-labelledby="t-summary">
@@ -101,8 +101,8 @@
         <tbody>
           <tr><th scope="row">Likes, playlists, history and recommendations</th><td>In the app's internal database, kept separately per <strong>taste profile</strong>.</td><td class="nota">Deleting a profile deletes its history, Likes and playlists («Las descargas no se tocan», downloads are not touched). Internal data is deleted when you uninstall the app.</td></tr>
           <tr><th scope="row">Temporary audio and cover art</th><td>Internal cache, with a maximum you choose in the settings. If your phone is low on space, it drops to 32 MB.</td><td class="nota">Ajustes → «Liberar espacio» (Free up space); downloads, Likes and playlists are not touched.</td></tr>
-          <tr><th scope="row">Downloaded songs</th><td>In the app's own storage.</td><td class="nota">With «Eliminar descarga» (Delete download) in the app, or by deleting the files.</td></tr>
-          <tr><th scope="row">Backup</th><td>An <code>.extmusic</code> file with likes, playlists, history, queue and settings, <strong>only when you export it</strong>, wherever you save it.</td><td class="nota">By deleting the file. How to make one: <a href="docs.html#backups">Docs → Backups</a>.</td></tr>
+          <tr><th scope="row">Downloaded songs</th><td>In the app's own storage. If a download fails, the app records the song, the reason and the time so it can offer a retry, until you request it again or it completes.</td><td class="nota">With «Eliminar descarga» (Delete download) in the app, or by deleting the files.</td></tr>
+          <tr><th scope="row">Backup</th><td>An <code>.extmusic</code> file with likes, playlists, history, queue and settings, <strong>only when you export it</strong>, wherever you save it. For libraries that exceed the maximum size, unused songs are left out and the queue may be trimmed. Exporting creates a temporary file in the cache, which is deleted when it finishes; if the app closes before that, it is deleted on the next export.</td><td class="nota">By deleting the file. How to make one: <a href="docs.html#backups">Docs → Backups</a>.</td></tr>
           <tr><th scope="row">Android automatic backup</th><td><strong>Disabled</strong> (<code>allowBackup="false"</code>): ExtMusic's data is not uploaded to Google's backup.</td><td class="nota nota--vacia">—</td></tr>
         </tbody>
       </table>
@@ -132,7 +132,7 @@
     <h2 class="titulo-sec" id="t-permissions"><span class="titulo-sec__num">4</span>Permissions</h2>
     <div class="tabla">
       <table class="datos">
-        <caption>Table 4. Permissions declared by the app (version 1.4.2)</caption>
+        <caption>Table 4. Permissions declared by the app (version 1.4.3)</caption>
         <thead><tr><th scope="col">Permission</th><th scope="col">What for</th></tr></thead>
         <tbody>
           <tr><th scope="row"><code>INTERNET</code></th><td>Listen, search, fetch lyrics and check for updates.</td></tr>
@@ -157,6 +157,7 @@
       <li><strong>HTTPS only.</strong> Unencrypted traffic is blocked (<code>cleartextTrafficPermitted="false"</code>).</li>
       <li><strong>System certificates only.</strong> The published version does not trust user-installed certificates, which makes intercepting its traffic harder. Development builds do accept them, for debugging.</li>
       <li><strong>Patched dependencies.</strong> The app forces patched versions of two indirect libraries (jsoup and Guava) because of published security advisories.</li>
+      <li><strong>Other apps' access to playback.</strong> Since 1.4.3, the app rejects other apps' connections to its playback session. The system and the apps Android considers trusted (with media control or notification access) can control playback and see the queue, but not add or change songs. On Android 8.x, which doesn't identify who sends commands through the system session, those commands are treated as trusted.</li>
       <li><strong>Open source.</strong> All the code is on <a href="https://github.com/Comunicaa2/ExtMusic">GitHub</a> under GPL-3.0-or-later; anyone can review it.</li>
     </ul>
   </section>

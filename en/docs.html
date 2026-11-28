@@ -36,7 +36,7 @@
   <div class="marco doc">
     <a class="marca" href="index.html" aria-label="ExtMusic, home"><img src="../assets/img/icono.svg" alt="" width="28" height="28">ExtMusic</a>
     <span class="doc__tipo">Music player for Android</span>
-    <span class="doc__rev"><!-- auto:rev -->v1.4.2 · 2026-11-25<!-- /auto:rev --></span>
+    <span class="doc__rev"><!-- auto:rev -->v1.4.3 · 2026-11-28<!-- /auto:rev --></span>
     <div class="idioma" role="group" aria-label="Language">
       <a href="../documentacion.html" lang="es" hreflang="es">ES<span class="visualmente-oculto"> (Español)</span></a>
       <span aria-hidden="true">/</span>
@@ -71,7 +71,7 @@
 <main id="content">
   <section class="marco seccion" aria-labelledby="t-page">
     <h1 class="titular" id="t-page">Documentation</h1>
-    <p class="subtitulo">How to use ExtMusic 1.4.2, <span class="marcador">with the exact names</span> of every option in the app.</p>
+    <p class="subtitulo">How to use ExtMusic 1.4.3, <span class="marcador">with the exact names</span> of every option in the app.</p>
     <div class="aviso mb-5"><p><strong>The app is in Spanish only.</strong> Each option is written as it appears on your phone, in Spanish, followed by its translation in italics. Settings are under <em>Ajustes</em> (Settings).</p></div>
     <nav class="toc" aria-label="On this page">
       <p class="etiqueta">On this page</p>
@@ -146,6 +146,7 @@
   <section class="marco seccion" id="downloads" aria-labelledby="t-4">
     <h2 class="titulo-sec" id="t-4"><span class="titulo-sec__num">4</span>Downloads</h2>
     <p>Download a song from its menu, or a whole album with the download button on its page. To remove it, «Eliminar descarga» (<em>Delete download</em>).</p>
+    <p class="mt-4">If a download fails, the app tells you, and the song's ⋮ menu shows <strong lang="es">Reintentar descarga</strong> (<em>Retry download</em>) with the reason: «No hay espacio en el teléfono» (<em>There's no space on the phone</em>) or «La última descarga falló» (<em>The last download failed</em>). The option stays there even if you close the app, until you request the download again or it completes.</p>
     <div class="tabla"><table class="datos">
       <caption>Table 3. Ajustes → Descargas (Settings → Downloads)</caption>
       <thead><tr><th scope="col">Option</th><th scope="col">What it does</th></tr></thead>
@@ -195,7 +196,7 @@
     <div class="doc-col">
       <div>
         <ol class="pasos">
-          <li><div><strong lang="es">Exportar backup</strong> (<em>Export backup</em>) (<em lang="es">Ajustes → Tus datos</em>): saves your likes, playlists, history, queue and settings to a compressed <code>.extmusic</code> file, wherever you choose.</div></li>
+          <li><div><strong lang="es">Exportar backup</strong> (<em>Export backup</em>) (<em lang="es">Ajustes → Tus datos</em>): saves your likes, playlists, history, queue and settings to a compressed <code>.extmusic</code> file, wherever you choose. The app generates and checks the backup before opening that file; if the final write fails or the app closes at that moment, the file may be left incomplete. If your library exceeds the maximum size of a backup, unused songs are left out (those that aren't downloaded or in a playlist and have no Like, plays or “don't recommend” mark) and, if needed, the queue is trimmed.</div></li>
           <li><div>To move your library to another phone, copy that file and use <strong lang="es">Importar backup</strong> (<em>Import backup</em>): it adds the data of a backup <strong>without deleting the current data</strong>.</div></li>
           <li><div>After importing: if you used a music folder, choose it again. The imported queue is already in the player.</div></li>
         </ol>
@@ -235,6 +236,9 @@
         <tr><th scope="row">«Ese enlace no es de una playlist de YouTube» (That link isn't a YouTube playlist)</th><td>Paste the link of a playlist or album from YouTube or YouTube Music.</td></tr>
         <tr><th scope="row">After importing a backup my local music is missing</th><td>Choose the folder again in <em lang="es">Ajustes → Tus datos → Música del teléfono → Carpeta de música</em>.</td></tr>
         <tr><th scope="row">«Ahorro de batería» notice: the audio chip failed</th><td>The phone failed to decode with its audio chip and the app saves battery another way. Turn <strong lang="es">Ahorro de batería</strong> (<em>Battery saver</em>) off and on to retry.</td></tr>
+        <tr><th scope="row">«No se pudo descargar» (Couldn't download) when downloading a song</th><td>Open its ⋮ menu to see the reason and tap <strong lang="es">Reintentar descarga</strong> (<em>Retry download</em>). If it says there's no space on the phone, free some up first.</td></tr>
+        <tr><th scope="row">«No se pudo descargar: no hay espacio. Libera algo y toca para reintentar.» on an update (Couldn't download: no space. Free some up and tap to retry.)</th><td>Free up space on your phone and tap to retry.</td></tr>
+        <tr><th scope="row">«No se exportó: tu biblioteca supera el tamaño máximo de un backup» (Not exported: your library exceeds the maximum size of a backup)</th><td>The library doesn't fit even after leaving out unused songs and trimming the queue, so it isn't exported.</td></tr>
         <tr><th scope="row">The app takes up too much space</th><td>In <em lang="es">Ajustes → Tus datos → Almacenamiento</em> (Storage), lower <strong lang="es">Máximo de audio temporal</strong> (<em>Maximum temporary audio</em>) or use <strong lang="es">Liberar espacio</strong> (<em>Free up space</em>) (it doesn't touch downloads, Likes or playlists).</td></tr>
         <tr><th scope="row">«La descarga no coincidía con la publicada…» or «La APK no era válida…» (the download didn't match / the APK wasn't valid)</th><td>The app has already deleted the file for safety. Tap to retry; if it happens again, check your connection or download the APK from <a href="versions.html">Versions</a>.</td></tr>
         <tr><th scope="row">«No se pudo actualizar. Revisa tu conexión.» on Home (Couldn't refresh. Check your connection.)</th><td>Check your connection and pull down on Home to refresh.</td></tr>

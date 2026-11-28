@@ -37,7 +37,7 @@
   "image": "https://comunicaa2.github.io/ExtMusic-web/assets/img/icono-512.png",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Android 8.0 or later",
-  "softwareVersion": "1.4.2",
+  "softwareVersion": "1.4.3",
   "fileSize": "4.8MB",
   "downloadUrl": "https://github.com/Comunicaa2/ExtMusic/releases/latest/download/ExtMusic.apk",
   "license": "https://www.gnu.org/licenses/gpl-3.0.html",
@@ -55,7 +55,7 @@
   <div class="marco doc">
     <a class="marca" href="index.html" aria-label="ExtMusic, home"><img src="../assets/img/icono.svg" alt="" width="28" height="28">ExtMusic</a>
     <span class="doc__tipo">Music player for Android</span>
-    <span class="doc__rev"><!-- auto:rev -->v1.4.2 · 2026-11-25<!-- /auto:rev --></span>
+    <span class="doc__rev"><!-- auto:rev -->v1.4.3 · 2026-11-28<!-- /auto:rev --></span>
     <div class="idioma" role="group" aria-label="Language">
       <a href="../index.html" lang="es" hreflang="es">ES<span class="visualmente-oculto"> (Español)</span></a>
       <span aria-hidden="true">/</span>
@@ -104,7 +104,7 @@
       <figure class="figura portada__figura">
         <div class="anotada">
           <div class="lamina">
-            <img src="../assets/img/capturas/reproductor-540.webp" srcset="../assets/img/capturas/reproductor-360.webp 360w, ../assets/img/capturas/reproductor-540.webp 540w, ../assets/img/capturas/reproductor-720.webp 720w" sizes="(max-width: 560px) 260px, (max-width: 900px) 240px, 300px" width="1080" height="2400" fetchpriority="high" alt="ExtMusic player (in Spanish) playing “Don&#39;t Stop Me Now” by Queen, with six numbered markers pointing at its parts.">
+            <img src="../assets/img/capturas/reproductor-540.webp" srcset="../assets/img/capturas/reproductor-360.webp 360w, ../assets/img/capturas/reproductor-460.webp 460w, ../assets/img/capturas/reproductor-540.webp 540w, ../assets/img/capturas/reproductor-720.webp 720w" sizes="(max-width: 560px) 260px, (max-width: 900px) 240px, 300px" width="1080" height="2400" fetchpriority="high" alt="ExtMusic player (in Spanish) playing “Don&#39;t Stop Me Now” by Queen, with six numbered markers pointing at its parts.">
             <svg viewBox="0 0 1080 2400" aria-hidden="true">
               <g class="marca-num"><line x1="540" y1="780" x2="1080" y2="780"/><circle cx="540" cy="780" r="40"/><text x="540" y="782">1</text></g>
               <g class="marca-num"><line x1="120" y1="1330" x2="0" y2="1330"/><circle cx="120" cy="1330" r="40"/><text x="120" y="1332">2</text></g>
@@ -135,7 +135,7 @@
     <h2 class="titulo-sec" id="t-features"><span class="titulo-sec__num">2</span>Features</h2>
     <div class="tabla">
       <table class="datos datos--apilable">
-        <caption>Table 1. Features, reviewed in version 1.4.2</caption>
+        <caption>Table 1. Features, reviewed in version 1.4.3</caption>
         <thead><tr><th scope="col">Feature</th><th scope="col">Description</th><th scope="col">Requirement</th></tr></thead>
         <tbody>
           <tr><th scope="row">Search</th><td>Songs, artists and albums from YouTube Music, with filters. No sign-in.</td><td class="nota">Internet connection</td></tr>
@@ -144,7 +144,7 @@
           <tr><th scope="row">Playback</th><td>Editable queue (drag to reorder) and sleep timer.</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Home</th><td>Quick picks, listen again and mixes from your artists. “Don't recommend” option.</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Lyrics</th><td>Synced from LRCLIB, with KuGou as fallback, and local <code>.lrc</code> files. They can be saved for offline viewing.</td><td class="nota nota--vacia">—</td></tr>
-          <tr><th scope="row">Downloads</th><td>Saves songs for offline listening, with an option to download only on Wi-Fi.</td><td class="nota nota--vacia">—</td></tr>
+          <tr><th scope="row">Downloads</th><td>Saves songs for offline listening, with an option to download only on Wi-Fi. If a download fails, you can retry it from the ⋮ menu.</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Local music</th><td>Plays the music on your phone, with a folder filter.</td><td class="nota">Audio permission</td></tr>
           <tr><th scope="row">Normalization</th><td>Raises quiet songs and smooths volume peaks.</td><td class="nota">Android 9+</td></tr>
           <tr><th scope="row">Appearance</th><td>Light, dark and AMOLED themes; background from the cover color; liquid glass.</td><td class="nota">Refraction: Android 13+</td></tr>
@@ -171,13 +171,17 @@
 
   <section class="marco seccion" id="whats-new" aria-labelledby="t-whats-new">
     <!-- auto:novedades -->
-    <h2 class="titulo-sec" id="t-whats-new"><span class="titulo-sec__num">3</span>What's new in version 1.4.2</h2>
-    <p class="etiqueta etiqueta--suave">Released 2026-11-25 · official release notes</p>
+    <h2 class="titulo-sec" id="t-whats-new"><span class="titulo-sec__num">3</span>What's new in version 1.4.3</h2>
+    <p class="etiqueta etiqueta--suave">Released 2026-11-28 · official release notes</p>
     <ul class="novedades">
-      <li>New: the app tells you when there's a new version and installs it for you</li>
-      <li>Fix: downloads no longer get stuck on some Wi-Fi networks</li>
-      <li>Fix: a cut-off download no longer leaves a broken song</li>
-      <li>Asks permission to show notifications the first time</li>
+      <li>New: if a download fails, you're told and can retry it from the ⋮ menu</li>
+      <li>Tells you when you're out of space, also when updating the app</li>
+      <li>Exporting a backup can no longer erase the previous one</li>
+      <li>Very large backups can now be restored</li>
+      <li>Fix: Home no longer crashes</li>
+      <li>Fix: profiles no longer mix their recommendations</li>
+      <li>"Add to playlist" shows all your playlists</li>
+      <li>Safer: other apps can no longer add songs to your queue</li>
     </ul>
     <!-- /auto:novedades -->
     <p class="desc texto-nota"><strong>How updating works:</strong> the app downloads the new version from GitHub, checks its SHA-256 fingerprint and its signature, and opens the Android installer for you to confirm. Only in the version downloaded from GitHub.</p>
@@ -191,7 +195,7 @@
         <caption>Table 2. General specifications</caption>
         <thead><tr><th scope="col">Parameter</th><th scope="col">Value</th><th scope="col">Notes</th></tr></thead>
         <tbody>
-          <!-- auto:t2-version --><tr><th scope="row">Version</th><td>1.4.2</td><td class="nota">2026-11-25</td></tr><!-- /auto:t2-version -->
+          <!-- auto:t2-version --><tr><th scope="row">Version</th><td>1.4.3</td><td class="nota">2026-11-28</td></tr><!-- /auto:t2-version -->
           <tr><th scope="row">System</th><td>Android 8.0 (API 26) or later</td><td class="nota nota--vacia">—</td></tr>
           <!-- auto:t2-tamano --><tr><th scope="row">APK size</th><td>4.8 MB</td><td class="nota">ExtMusic.apk</td></tr><!-- /auto:t2-tamano -->
           <tr><th scope="row">License</th><td>GPL-3.0-or-later</td><td class="nota">Free software</td></tr>
@@ -199,7 +203,7 @@
           <tr><th scope="row">Ads</th><td>None</td><td class="nota nota--vacia">—</td></tr>
           <tr><th scope="row">Analytics</th><td>None</td><td class="nota">No analytics or crash-reporting libraries</td></tr>
           <tr><th scope="row">Your data</th><td>Only on your phone</td><td class="nota">Exportable backup (.extmusic)</td></tr>
-          <!-- auto:t2-sha --><tr><th scope="row">SHA-256</th><td colspan="2"><span class="hash">5c964566b91704ef26e2dc6f13758f6bcfd305b616ddf89def17c4b8e78a213c</span></td></tr><!-- /auto:t2-sha -->
+          <!-- auto:t2-sha --><tr><th scope="row">SHA-256</th><td colspan="2"><span class="hash">c479d5b8d1ac938b93aee92f4cc134411b57d27bed7e6fbe4d0868ff6d2f2085</span></td></tr><!-- /auto:t2-sha -->
         </tbody>
       </table>
     </div>
